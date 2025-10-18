@@ -149,5 +149,30 @@
   },
   "footer": {
     "allRightsReserved": "Όλα τα δικαιώματα διατηρούνται."
+  },
+  "home": {
+    "searchPlaceholder": "Αναζήτηση προϊόντων, υπηρεσιών...",
+    "search": "Αναζήτηση",
+    "noListings": "Δεν βρέθηκαν αγγελίες",
+    "noMoreListings": "Φτάσατε στο τέλος της λίστας",
+    "filters": {
+      "title": "Φίλτρα",
+      "category": "Κατηγορία",
+      "allCategories": "Όλες οι κατηγορίες",
+      "minPrice": "Ελάχ. τιμή",
+      "maxPrice": "Μέγ. τιμή",
+      "location": "Τοποθεσία",
+      "locationPlaceholder": "Εισαγάγετε τοποθεσία",
+      "reset": "Επαναφορά",
+      "apply": "Εφαρμογή"
+    },
+    "categories": {
+      "electronics": "Ηλεκτρονικά",
+      "vehicles": "Οχήματα",
+      "realestate": "Ακίνητα",
+      "fashion": "Μόδα",
+      "home": "Σπίτι & Κήπος",
+      "sports": "Αθλητισμός"
+    }
   }
 }

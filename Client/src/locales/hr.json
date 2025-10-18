@@ -149,5 +149,30 @@
   },
   "footer": {
     "allRightsReserved": "Sva prava pridržana."
+  },
+  "home": {
+    "searchPlaceholder": "Pretražite proizvode, usluge...",
+    "search": "Pretraži",
+    "noListings": "Nema oglasa",
+    "noMoreListings": "Dostigli ste kraj popisa",
+    "filters": {
+      "title": "Filtri",
+      "category": "Kategorija",
+      "allCategories": "Sve kategorije",
+      "minPrice": "Min. cijena",
+      "maxPrice": "Maks. cijena",
+      "location": "Lokacija",
+      "locationPlaceholder": "Unesite lokaciju",
+      "reset": "Resetiraj",
+      "apply": "Primijeni"
+    },
+    "categories": {
+      "electronics": "Elektronika",
+      "vehicles": "Vozila",
+      "realestate": "Nekretnine",
+      "fashion": "Moda",
+      "home": "Dom i vrt",
+      "sports": "Sport"
+    }
   }
 }

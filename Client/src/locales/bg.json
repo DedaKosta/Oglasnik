@@ -149,5 +149,30 @@
   },
   "footer": {
     "allRightsReserved": "Всички права запазени."
+  },
+  "home": {
+    "searchPlaceholder": "Търсете продукти, услуги...",
+    "search": "Търси",
+    "noListings": "Няма обяви",
+    "noMoreListings": "Достигнахте края на списъка",
+    "filters": {
+      "title": "Филтри",
+      "category": "Категория",
+      "allCategories": "Всички категории",
+      "minPrice": "Мин. цена",
+      "maxPrice": "Макс. цена",
+      "location": "Местоположение",
+      "locationPlaceholder": "Въведете местоположение",
+      "reset": "Нулирай",
+      "apply": "Приложи"
+    },
+    "categories": {
+      "electronics": "Електроника",
+      "vehicles": "Превозни средства",
+      "realestate": "Недвижими имоти",
+      "fashion": "Мода",
+      "home": "Дом и градина",
+      "sports": "Спорт"
+    }
   }
 }

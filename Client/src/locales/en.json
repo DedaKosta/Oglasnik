@@ -149,5 +149,30 @@
   },
   "footer": {
     "allRightsReserved": "All rights reserved."
+  },
+  "home": {
+    "searchPlaceholder": "Search for products, services...",
+    "search": "Search",
+    "noListings": "No listings found",
+    "noMoreListings": "You've reached the end of the list",
+    "filters": {
+      "title": "Filters",
+      "category": "Category",
+      "allCategories": "All Categories",
+      "minPrice": "Min Price",
+      "maxPrice": "Max Price",
+      "location": "Location",
+      "locationPlaceholder": "Enter location",
+      "reset": "Reset",
+      "apply": "Apply"
+    },
+    "categories": {
+      "electronics": "Electronics",
+      "vehicles": "Vehicles",
+      "realestate": "Real Estate",
+      "fashion": "Fashion",
+      "home": "Home & Garden",
+      "sports": "Sports"
+    }
   }
 }
