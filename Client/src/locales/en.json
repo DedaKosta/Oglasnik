@@ -146,5 +146,8 @@
       },
       "questions": "Have questions about our terms?"
     }
+  },
+  "footer": {
+    "allRightsReserved": "All rights reserved."
   }
 }

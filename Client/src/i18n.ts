@@ -5,6 +5,9 @@ import sr from './locales/sr.json'
 import bs from './locales/bs.json'
 import hr from './locales/hr.json'
 import mk from './locales/mk.json'
+import bg from './locales/bg.json'
+import el from './locales/el.json'
+import me from './locales/me.json'
 
 i18n
   .use(initReactI18next)
@@ -14,7 +17,10 @@ i18n
       sr: { translation: sr },
       bs: { translation: bs },
       hr: { translation: hr },
-      mk: { translation: mk }
+      mk: { translation: mk },
+      bg: { translation: bg },
+      el: { translation: el },
+      me: { translation: me }
     },
     lng: 'en', // default language
     fallbackLng: 'en',

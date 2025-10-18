@@ -146,5 +146,8 @@
       },
       "questions": "Imate pitanja o našim uslovima?"
     }
+  },
+  "footer": {
+    "allRightsReserved": "Sva prava zadržana."
   }
 }

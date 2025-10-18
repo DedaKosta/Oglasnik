@@ -1,9 +1,10 @@
 import { Link } from 'react-router-dom'
 import LanguageSwitcher from './LanguageSwitcher'
+import ThemeToggle from './ThemeToggle'
 
 export default function Header() {
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 bg-white/80 backdrop-blur-md border-b border-gray-200">
+    <header className="fixed top-0 left-0 right-0 z-50 bg-white/80 dark:bg-gray-900/80 backdrop-blur-md border-b border-gray-200 dark:border-gray-700">
       <div className="flex items-center justify-between py-3 px-4">
         {/* Logo */}
         <Link to="/" className="flex items-center gap-3 hover:opacity-80 transition-opacity">
@@ -13,11 +14,12 @@ export default function Header() {
               <circle cx="7" cy="7" r="1.5" fill="white"/>
             </svg>
           </div>
-          <span className="text-xl font-bold text-gray-900">Oglasnik</span>
+          <span className="text-xl font-bold text-gray-900 dark:text-white">Oglasnik</span>
         </Link>
 
-        {/* Language Switcher */}
-        <div className="relative">
+        {/* Right Side Controls */}
+        <div className="flex items-center gap-3">
+          <ThemeToggle />
           <LanguageSwitcher />
         </div>
       </div>

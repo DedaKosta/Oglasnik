@@ -1,150 +1,153 @@
 {
   "auth": {
     "signIn": {
-      "title": "Dobrodošli nazad",
-      "subtitle": "Prijavite se na svoj nalog da nastavite",
-      "email": "Email adresa",
-      "emailPlaceholder": "Unesite vaš email",
-      "password": "Lozinka",
-      "passwordPlaceholder": "Unesite vašu lozinku",
-      "rememberMe": "Zapamti me",
-      "forgotPassword": "Zaboravili ste lozinku?",
-      "signInButton": "Prijavite se",
-      "orContinueWith": "Ili nastavite sa",
-      "noAccount": "Nemate nalog?",
-      "signUpLink": "Registrujte se"
+      "title": "Добродошли назад",
+      "subtitle": "Пријавите се на свој налог да наставите",
+      "email": "Емаил адреса",
+      "emailPlaceholder": "Унесите ваш емаил",
+      "password": "Лозинка",
+      "passwordPlaceholder": "Унесите вашу лозинку",
+      "rememberMe": "Запамти ме",
+      "forgotPassword": "Заборавили сте лозинку?",
+      "signInButton": "Пријавите се",
+      "orContinueWith": "Или наставите са",
+      "noAccount": "Немате налог?",
+      "signUpLink": "Региструјте се"
     },
     "signUp": {
-      "title": "Napravite nalog",
-      "subtitle": "Pridružite nam se i započnite svoje putovanje danas",
-      "fullName": "Puno ime",
-      "fullNamePlaceholder": "Unesite vaše puno ime",
-      "email": "Email adresa",
-      "emailPlaceholder": "Unesite vaš email",
-      "password": "Lozinka",
-      "passwordPlaceholder": "Napravite lozinku",
-      "passwordHint": "Mora biti najmanje 8 karaktera",
-      "confirmPassword": "Potvrdite lozinku",
-      "confirmPasswordPlaceholder": "Potvrdite vašu lozinku",
-      "termsPrefix": "Slažem se sa",
-      "termsLink": "Uslovima korišćenja",
-      "and": "i",
-      "privacyLink": "Politikom privatnosti",
-      "createAccountButton": "Napravite nalog",
-      "orSignUpWith": "Ili se registrujte sa",
-      "hasAccount": "Već imate nalog?",
-      "signInLink": "Prijavite se"
+      "title": "Направите налог",
+      "subtitle": "Придружите нам се и започните своје путовање данас",
+      "fullName": "Пуно име",
+      "fullNamePlaceholder": "Унесите ваше пуно име",
+      "email": "Емаил адреса",
+      "emailPlaceholder": "Унесите ваш емаил",
+      "password": "Лозинка",
+      "passwordPlaceholder": "Направите лозинку",
+      "passwordHint": "Мора бити најмање 8 карактера",
+      "confirmPassword": "Потврдите лозинку",
+      "confirmPasswordPlaceholder": "Потврдите вашу лозинку",
+      "termsPrefix": "Слажем се са",
+      "termsLink": "Условима коришћења",
+      "and": "и",
+      "privacyLink": "Политиком приватности",
+      "createAccountButton": "Направите налог",
+      "orSignUpWith": "Или се региструјте са",
+      "hasAccount": "Већ имате налог?",
+      "signInLink": "Пријавите се"
     },
     "social": {
-      "google": "Nastavite sa Google"
+      "google": "Наставите са Google"
     }
   },
   "forgotPassword": {
-    "title": "Zaboravljena lozinka",
-    "subtitle": "Unesite vašu email adresu i poslaćemo vam link za resetovanje lozinke",
-    "emailLabel": "Email adresa",
-    "emailPlaceholder": "Unesite vaš email",
-    "submitButton": "Pošalji link za resetovanje",
-    "backToSignIn": "Nazad na prijavu"
+    "title": "Заборављена лозинка",
+    "subtitle": "Унесите вашу емаил адресу и послаћемо вам линк за ресетовање лозинке",
+    "emailLabel": "Емаил адреса",
+    "emailPlaceholder": "Унесите ваш емаил",
+    "submitButton": "Пошаљи линк за ресетовање",
+    "backToSignIn": "Назад на пријаву"
   },
   "resetPassword": {
-    "title": "Resetovanje lozinke",
-    "subtitle": "Unesite vašu novu lozinku ispod",
-    "newPasswordLabel": "Nova lozinka",
-    "newPasswordPlaceholder": "Unesite novu lozinku",
-    "confirmPasswordLabel": "Potvrdite lozinku",
-    "confirmPasswordPlaceholder": "Potvrdite vašu novu lozinku",
-    "showPassword": "Prikaži lozinku",
-    "submitButton": "Resetuj lozinku",
-    "backToSignIn": "Nazad na prijavu",
-    "passwordMismatch": "Lozinke se ne poklapaju"
+    "title": "Ресетовање лозинке",
+    "subtitle": "Унесите вашу нову лозинку испод",
+    "newPasswordLabel": "Нова лозинка",
+    "newPasswordPlaceholder": "Унесите нову лозинку",
+    "confirmPasswordLabel": "Потврдите лозинку",
+    "confirmPasswordPlaceholder": "Потврдите вашу нову лозинку",
+    "showPassword": "Прикажи лозинку",
+    "submitButton": "Ресетуј лозинку",
+    "backToSignIn": "Назад на пријаву",
+    "passwordMismatch": "Лозинке се не поклапају"
   },
   "contact": {
-    "title": "Kontaktirajte nas",
-    "subtitle": "Voleli bismo da čujemo od vas. Pošaljite nam poruku i odgovorićemo što je pre moguće.",
-    "nameLabel": "Puno ime",
-    "namePlaceholder": "Unesite vaše puno ime",
-    "emailLabel": "Email adresa",
-    "emailPlaceholder": "Unesite vaš email",
-    "subjectLabel": "Naslov",
-    "subjectPlaceholder": "O čemu se radi?",
-    "messageLabel": "Poruka",
-    "messagePlaceholder": "Recite nam više o vašem upitu...",
-    "submitButton": "Pošalji poruku",
-    "orReachUs": "Ili nas direktno kontaktirajte na:",
-    "successMessage": "Hvala na vašoj poruci! Javićemo vam se uskoro."
+    "title": "Контактирајте нас",
+    "subtitle": "Волели бисмо да чујемо од вас. Пошаљите нам поруку и одговорићемо што је пре могуће.",
+    "nameLabel": "Пуно име",
+    "namePlaceholder": "Унесите ваше пуно име",
+    "emailLabel": "Емаил адреса",
+    "emailPlaceholder": "Унесите ваш емаил",
+    "subjectLabel": "Наслов",
+    "subjectPlaceholder": "О чему се ради?",
+    "messageLabel": "Порука",
+    "messagePlaceholder": "Реците нам више о вашем упиту...",
+    "submitButton": "Пошаљи поруку",
+    "orReachUs": "Или нас директно контактирајте на:",
+    "successMessage": "Хвала на вашој поруци! Јавићемо вам се ускоро."
   },
   "legal": {
-    "backToSignIn": "Nazad na prijavu",
+    "backToSignIn": "Назад на пријаву",
     "privacy": {
-      "title": "Politika privatnosti",
-      "lastUpdated": "Poslednje ažurirano",
+      "title": "Политика приватности",
+      "lastUpdated": "Последње ажурирано",
       "section1": {
-        "title": "1. Uvod",
-        "content": "Dobrodošli na Oglasnik. Poštujemo vašu privatnost i posvećeni smo zaštiti vaših ličnih podataka. Ova politika privatnosti će vas informisati o tome kako čuvamo vaše lične podatke kada posetite našu veb stranicu i reći vam o vašim pravima na privatnost i kako vas zakon štiti."
+        "title": "1. Увод",
+        "content": "Добродошли на Огласник. Поштујемо вашу приватност и посвећени смо заштити ваших личних података. Ова политика приватности ће вас информисати о томе како чувамо ваше личне податке када посетите нашу веб страницу и рећи вам о вашим правима на приватност и како вас закон штити."
       },
       "section2": {
-        "title": "2. Informacije koje prikupljamo",
-        "intro": "Možemo prikupljati, koristiti, čuvati i prenositi različite vrste ličnih podataka o vama:",
-        "item1": "Podaci o identitetu: ime, korisničko ime ili sličan identifikator",
-        "item2": "Kontakt podaci: email adresa i brojevi telefona",
-        "item3": "Tehnički podaci: internet protokol (IP) adresa, tip i verzija pretraživača",
-        "item4": "Podaci o korišćenju: informacije o tome kako koristite našu veb stranicu i usluge"
+        "title": "2. Информације које прикупљамо",
+        "intro": "Можемо прикупљати, користити, чувати и преносити различите врсте личних података о вама:",
+        "item1": "Подаци о идентитету: име, корисничко име или сличан идентификатор",
+        "item2": "Контакт подаци: емаил адреса и бројеви телефона",
+        "item3": "Технички подаци: интернет протокол (IP) адреса, тип и верзија претраживача",
+        "item4": "Подаци о коришћењу: информације о томе како користите нашу веб страницу и услуге"
       },
       "section3": {
-        "title": "3. Kako koristimo vaše informacije",
-        "content": "Koristićemo vaše lične podatke samo kada nam zakon to dozvoli. Najčešće ćemo koristiti vaše lične podatke da vam pružimo usluge, da poboljšamo našu veb stranicu i usluge, i da komuniciramo sa vama o ažuriranjima, ponudama i vestima vezanim za naše usluge."
+        "title": "3. Како користимо ваше информације",
+        "content": "Користићемо ваше личне податке само када нам закон то дозволи. Најчешће ћемо користити ваше личне податке да вам пружимо услуге, да побољшамо нашу веб страницу и услуге, и да комуницирамо са вама о ажурирањима, понудама и вестима везаним за наше услуге."
       },
       "section4": {
-        "title": "4. Bezbednost podataka",
-        "content": "Implementirali smo odgovarajuće bezbednosne mere kako bismo sprečili da vaši lični podaci budu slučajno izgubljeni, korišćeni ili pristupljeni na neovlašćen način, izmenjeni ili otkriveni. Ograničavamo pristup vašim ličnim podacima na one zaposlene, agente, izvođače i treće strane koje imaju poslovnu potrebu da znaju."
+        "title": "4. Безбедност података",
+        "content": "Имплементирали смо одговарајуће безбедносне мере како бисмо спречили да ваши лични подаци буду случајно изгубљени, коришћени или приступљени на неовлашћен начин, измењени или откривени. Ограничавамо приступ вашим личним подацима на оне запослене, агенте, извођаче и треће стране које имају пословну потребу да знају."
       },
       "section5": {
-        "title": "5. Vaša zakonska prava",
-        "content": "Pod određenim okolnostima, imate prava prema zakonima o zaštiti podataka u vezi sa vašim ličnim podacima, uključujući pravo da zahtevate pristup, ispravku, brisanje, ograničenje, prenos ili da prigovorite na obradu. Ako želite da ostvarite bilo koje od ovih prava, molimo vas da nas kontaktirate."
+        "title": "5. Ваша законска права",
+        "content": "Под одређеним околностима, имате права према законима о заштити података у вези са вашим личним подацима, укључујући право да захтевате приступ, исправку, брисање, ограничење, пренос или да приговорите на обраду. Ако желите да остварите било које од ових права, молимо вас да нас контактирате."
       },
       "section6": {
-        "title": "6. Kontaktirajte nas",
-        "content": "Ako imate bilo kakva pitanja o ovoj politici privatnosti ili našim praksama privatnosti, molimo vas da nas kontaktirate koristeći kontakt informacije navedene ispod."
+        "title": "6. Контактирајте нас",
+        "content": "Ако имате било каква питања о овој политици приватности или нашим праксама приватности, молимо вас да нас контактирате користећи контакт информације наведене испод."
       },
-      "questions": "Imate pitanja o našoj politici privatnosti?"
+      "questions": "Имате питања о нашој политици приватности?"
     },
     "terms": {
-      "title": "Uslovi korišćenja",
-      "lastUpdated": "Poslednje ažurirano",
+      "title": "Услови коришћења",
+      "lastUpdated": "Последње ажурирано",
       "section1": {
-        "title": "1. Prihvatanje uslova",
-        "content": "Pristupanjem i korišćenjem Oglasnika, prihvatate i slažete se da budete vezani uslovima i odredbama ovog sporazuma. Ako se ne slažete sa gore navedenim, molimo vas da ne koristite ovu uslugu."
+        "title": "1. Прихватање услова",
+        "content": "Приступањем и коришћењем Огласника, прихватате и слажете се да будете везани условима и одредбама овог споразума. Ако се не слажете са горе наведеним, молимо вас да не користите ову услугу."
       },
       "section2": {
-        "title": "2. Licenca za korišćenje",
-        "intro": "Dozvoljeno je privremeno korišćenje Oglasnika u lične, nekomercijalne svrhe. Ovo je dodeljivanje licence, a ne prenos vlasništva, i pod ovom licencom ne smete:",
-        "item1": "Menjati ili kopirati materijale",
-        "item2": "Koristiti materijale u bilo koje komercijalne svrhe ili za javno prikazivanje",
-        "item3": "Pokušavati da izvršite reverzni inženjering bilo kog softvera sadržanog na Oglasniku",
-        "item4": "Ukloniti bilo koje oznake autorskih prava ili druge vlasničke oznake sa materijala"
+        "title": "2. Лиценца за коришћење",
+        "intro": "Дозвољено је привремено коришћење Огласника у личне, некомерцијалне сврхе. Ово је додељивање лиценце, а не пренос власништва, и под овом лиценцом не смете:",
+        "item1": "Мењати или копирати материјале",
+        "item2": "Користити материјале у било које комерцијалне сврхе или за јавно приказивање",
+        "item3": "Покушавати да извршите реверзни инжењеринг било ког софтвера садржаног на Огласнику",
+        "item4": "Уклонити било које ознаке ауторских права или друге власничке ознаке са материјала"
       },
       "section3": {
-        "title": "3. Korisnički nalozi",
-        "content": "Kada kreirate nalog kod nas, morate pružiti informacije koje su tačne, potpune i aktuelne u svakom trenutku. Neuspeh da to učinite predstavlja kršenje Uslova, što može rezultirati trenutnim ukidanjem vašeg naloga na našoj usluzi."
+        "title": "3. Кориснички налози",
+        "content": "Када креирате налог код нас, морате пружити информације које су тачне, потпуне и актуелне у сваком тренутку. Неуспех да то учините представља кршење Услова, што може резултирати тренутним укидањем вашег налога на нашој услузи."
       },
       "section4": {
-        "title": "4. Zabranjene aktivnosti",
-        "content": "Ne smete pristupiti ili koristiti stranicu u bilo koju svrhu osim one za koju mi činimo stranicu dostupnom. Stranica se ne sme koristiti u vezi sa bilo kojim komercijalnim nastojanjima osim onih koja su posebno odobrena ili odobrena od strane nas."
+        "title": "4. Забрањене активности",
+        "content": "Не смете приступити или користити страницу у било коју сврху осим оне за коју ми чинимо страницу доступном. Страница се не сме користити у вези са било којим комерцијалним настојањима осим оних која су посебно одобрена или одобрена од стране нас."
       },
       "section5": {
-        "title": "5. Intelektualna svojina",
-        "content": "Usluga i njen originalni sadržaj, funkcije i funkcionalnost jesu i ostaće ekskluzivna svojina Oglasnika i njegovih davalaca licence. Usluga je zaštićena zakonima o autorskim pravima, žigu i drugim zakonima kako zemlje tako i stranih zemalja."
+        "title": "5. Интелектуална својина",
+        "content": "Услуга и њен оригинални садржај, функције и функционалност јесу и остаће ексклузивна својина Огласника и његових даваоца лиценце. Услуга је заштићена законима о ауторским правима, жигу и другим законима како земље тако и страних земаља."
       },
       "section6": {
-        "title": "6. Raskid",
-        "content": "Možemo raskinuti ili suspendovati vaš nalog i zabraniti pristup usluzi odmah, bez prethodne najave ili odgovornosti, prema našem sopstvenom nahođenju, iz bilo kog razloga i bez ograničenja, uključujući ali ne ograničavajući se na kršenje Uslova."
+        "title": "6. Раскид",
+        "content": "Можемо раскинути или суспендовати ваш налог и забранити приступ услузи одмах, без претходне најаве или одговорности, према нашем сопственом нахођењу, из било ког разлога и без ограничења, укључујући али не ограничавајући се на кршење Услова."
       },
       "section7": {
-        "title": "7. Ograničenje odgovornosti",
-        "content": "Ni u kom slučaju Oglasnik, niti njegovi direktori, zaposleni, partneri, agenti, dobavljači ili podružnice, neće biti odgovorni za bilo kakvu indirektnu, slučajnu, posebnu, posledičnu ili kaznenu štetu, uključujući bez ograničenja, gubitak profita, podataka, korišćenja, dobre volje ili drugih nematerijalnih gubitaka."
+        "title": "7. Ограничење одговорности",
+        "content": "Ни у ком случају Огласник, нити његови директори, запослени, партнери, агенти, добављачи или подружнице, неће бити одговорни за било какву индиректну, случајну, посебну, последичну или казнену штету, укључујући без ограничења, губитак профита, података, коришћења, добре воље или других нематеријалних губитака."
       },
-      "questions": "Imate pitanja o našim uslovima?"
+      "questions": "Имате питања о нашим условима?"
     }
+  },
+  "footer": {
+    "allRightsReserved": "Сва права задржана."
   }
 }

@@ -2,7 +2,7 @@
   "auth": {
     "signIn": {
       "title": "Dobrodošli nazad",
-      "subtitle": "Prijavite se na svoj nalog da nastavite",
+      "subtitle": "Prijavite se na vaš nalog da nastavite",
       "email": "Email adresa",
       "emailPlaceholder": "Unesite vaš email",
       "password": "Lozinka",
@@ -61,7 +61,7 @@
   },
   "contact": {
     "title": "Kontaktirajte nas",
-    "subtitle": "Voleli bismo da čujemo od vas. Pošaljite nam poruku i odgovorićemo što je prije moguće.",
+    "subtitle": "Voljeli bismo da čujemo od vas. Pošaljite nam poruku i odgovorićemo što je prije moguće.",
     "nameLabel": "Puno ime",
     "namePlaceholder": "Unesite vaše puno ime",
     "emailLabel": "Email adresa",
@@ -78,10 +78,10 @@
     "backToSignIn": "Nazad na prijavu",
     "privacy": {
       "title": "Politika privatnosti",
-      "lastUpdated": "Poslednje ažurirano",
+      "lastUpdated": "Posljednje ažurirano",
       "section1": {
         "title": "1. Uvod",
-        "content": "Dobrodošli na Oglasnik. Poštujemo vašu privatnost i posvećeni smo zaštiti vaših ličnih podataka. Ova politika privatnosti će vas informisati o tome kako čuvamo vaše lične podatke kada posetite našu veb stranicu i reći vam o vašim pravima na privatnost i kako vas zakon štiti."
+        "content": "Dobrodošli na Oglasnik. Poštujemo vašu privatnost i posvećeni smo zaštiti vaših ličnih podataka. Ova politika privatnosti će vas informisati o tome kako čuvamo vaše lične podatke kada posjetite našu web stranicu i reći vam o vašim pravima na privatnost i kako vas zakon štiti."
       },
       "section2": {
         "title": "2. Informacije koje prikupljamo",
@@ -89,19 +89,19 @@
         "item1": "Podaci o identitetu: ime, korisničko ime ili sličan identifikator",
         "item2": "Kontakt podaci: email adresa i brojevi telefona",
         "item3": "Tehnički podaci: internet protokol (IP) adresa, tip i verzija pretraživača",
-        "item4": "Podaci o korišćenju: informacije o tome kako koristite našu veb stranicu i usluge"
+        "item4": "Podaci o korišćenju: informacije o tome kako koristite našu web stranicu i usluge"
       },
       "section3": {
         "title": "3. Kako koristimo vaše informacije",
-        "content": "Koristićemo vaše lične podatke samo kada nam zakon to dozvoli. Najčešće ćemo koristiti vaše lične podatke da vam pružimo usluge, da poboljšamo našu veb stranicu i usluge, i da komuniciramo sa vama o ažuriranjima, ponudama i vestima vezanim za naše usluge."
+        "content": "Koristićemo vaše lične podatke samo kada nam zakon to dozvoli. Najčešće ćemo koristiti vaše lične podatke da vam pružimo usluge, da poboljšamo našu web stranicu i usluge, i da komuniciramo sa vama o ažuriranjima, ponudama i vijestima vezanim za naše usluge."
       },
       "section4": {
-        "title": "4. Bezbednost podataka",
-        "content": "Implementirali smo odgovarajuće bezbednosne mere kako bismo sprečili da vaši lični podaci budu slučajno izgubljeni, korišćeni ili pristupljeni na neovlašćen način, izmenjeni ili otkriveni. Ograničavamo pristup vašim ličnim podacima na one zaposlene, agente, izvođače i treće strane koje imaju poslovnu potrebu da znaju."
+        "title": "4. Bezbjednost podataka",
+        "content": "Implementirali smo odgovarajuće bezbjednosne mjere kako bismo spriječili da vaši lični podaci budu slučajno izgubljeni, korišćeni ili pristupljeni na neovlašćen način, izmijenjeni ili otkriveni. Ograničavamo pristup vašim ličnim podacima na one zaposlene, agente, izvođače i treće strane koje imaju poslovnu potrebu da znaju."
       },
       "section5": {
         "title": "5. Vaša zakonska prava",
-        "content": "Pod određenim okolnostima, imate prava prema zakonima o zaštiti podataka u vezi sa vašim ličnim podacima, uključujući pravo da zahtevate pristup, ispravku, brisanje, ograničenje, prenos ili da prigovorite na obradu. Ako želite da ostvarite bilo koje od ovih prava, molimo vas da nas kontaktirate."
+        "content": "Pod određenim okolnostima, imate prava prema zakonima o zaštiti podataka u vezi sa vašim ličnim podacima, uključujući pravo da zahtijevate pristup, ispravku, brisanje, ograničenje, prijenos ili da prigovorite na obradu. Ako želite da ostvarite bilo koje od ovih prava, molimo vas da nas kontaktirate."
       },
       "section6": {
         "title": "6. Kontaktirajte nas",
@@ -111,26 +111,26 @@
     },
     "terms": {
       "title": "Uslovi korišćenja",
-      "lastUpdated": "Poslednje ažurirano",
+      "lastUpdated": "Posljednje ažurirano",
       "section1": {
         "title": "1. Prihvatanje uslova",
         "content": "Pristupanjem i korišćenjem Oglasnika, prihvatate i slažete se da budete vezani uslovima i odredbama ovog sporazuma. Ako se ne slažete sa gore navedenim, molimo vas da ne koristite ovu uslugu."
       },
       "section2": {
         "title": "2. Licenca za korišćenje",
-        "intro": "Dozvoljeno je privremeno korišćenje Oglasnika u lične, nekomercijalne svrhe. Ovo je dodeljivanje licence, a ne prenos vlasništva, i pod ovom licencom ne smete:",
-        "item1": "Menjati ili kopirati materijale",
+        "intro": "Dozvoljeno je privremeno korišćenje Oglasnika u lične, nekomercijalne svrhe. Ovo je dodjeljivanje licence, a ne prijenos vlasništva, i pod ovom licencom ne smijete:",
+        "item1": "Mijenjati ili kopirati materijale",
         "item2": "Koristiti materijale u bilo koje komercijalne svrhe ili za javno prikazivanje",
         "item3": "Pokušavati da izvršite reverzni inženjering bilo kog softvera sadržanog na Oglasniku",
         "item4": "Ukloniti bilo koje oznake autorskih prava ili druge vlasničke oznake sa materijala"
       },
       "section3": {
         "title": "3. Korisnički nalozi",
-        "content": "Kada kreirate nalog kod nas, morate pružiti informacije koje su tačne, potpune i aktuelne u svakom trenutku. Neuspeh da to učinite predstavlja kršenje Uslova, što može rezultirati trenutnim ukidanjem vašeg naloga na našoj usluzi."
+        "content": "Kada kreirate nalog kod nas, morate pružiti informacije koje su tačne, potpune i aktuelne u svakom trenutku. Neuspjeh da to učinite predstavlja kršenje Uslova, što može rezultirati trenutnim ukidanjem vašeg naloga na našoj usluzi."
       },
       "section4": {
         "title": "4. Zabranjene aktivnosti",
-        "content": "Ne smete pristupiti ili koristiti stranicu u bilo koju svrhu osim one za koju mi činimo stranicu dostupnom. Stranica se ne sme koristiti u vezi sa bilo kojim komercijalnim nastojanjima osim onih koja su posebno odobrena ili odobrena od strane nas."
+        "content": "Ne smijete pristupiti ili koristiti stranicu u bilo koju svrhu osim one za koju mi činimo stranicu dostupnom. Stranica se ne smije koristiti u vezi sa bilo kojim komercijalnim nastojanjima osim onih koja su posebno odobrena ili odobrena od strane nas."
       },
       "section5": {
         "title": "5. Intelektualna svojina",
@@ -142,12 +142,12 @@
       },
       "section7": {
         "title": "7. Ograničenje odgovornosti",
-        "content": "Ni u kom slučaju Oglasnik, niti njegovi direktori, zaposleni, partneri, agenti, dobavljači ili podružnice, neće biti odgovorni za bilo kakvu indirektnu, slučajnu, posebnu, posledičnu ili kaznenu štetu, uključujući bez ograničenja, gubitak profita, podataka, korišćenja, dobre volje ili drugih nematerijalnih gubitaka."
+        "content": "Ni u kom slučaju Oglasnik, niti njegovi direktori, zaposleni, partneri, agenti, dobavljači ili podružnice, neće biti odgovorni za bilo kakvu indirektnu, slučajnu, posebnu, posljedičnu ili kaznenu štetu, uključujući bez ograničenja, gubitak profita, podataka, korišćenja, dobre volje ili drugih nematerijalnih gubitaka."
       },
       "questions": "Imate pitanja o našim uslovima?"
     }
   },
   "footer": {
-    "allRightsReserved": "Sva prava pridržana."
+    "allRightsReserved": "Sva prava zadržana."
   }
 }

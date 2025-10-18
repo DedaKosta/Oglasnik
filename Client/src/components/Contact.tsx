@@ -35,18 +35,18 @@ export default function Contact() {
   }
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-indigo-100 via-purple-50 to-pink-100">
+    <div className="min-h-screen bg-gradient-to-br from-indigo-100 via-purple-50 to-pink-100 dark:from-gray-900 dark:via-gray-800 dark:to-gray-900">
       <Header />
 
       <div className="flex items-center justify-center min-h-screen px-4 pt-20 pb-16">
         <div className="w-full max-w-2xl">
-          <div className="bg-white/80 backdrop-blur-md rounded-2xl shadow-xl p-8 md:p-12">
+          <div className="bg-white/80 dark:bg-gray-800/80 backdrop-blur-md rounded-2xl shadow-xl p-8 md:p-12">
             {/* Header */}
             <div className="text-center mb-8">
-              <h1 className="text-4xl font-bold text-gray-900 mb-2">
+              <h1 className="text-4xl font-bold text-gray-900 dark:text-white mb-2">
                 {t('contact.title')}
               </h1>
-              <p className="text-gray-600">
+              <p className="text-gray-600 dark:text-gray-300">
                 {t('contact.subtitle')}
               </p>
             </div>
@@ -55,7 +55,7 @@ export default function Contact() {
             <form onSubmit={handleSubmit} className="space-y-6">
               {/* Name Field */}
               <div>
-                <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-2">
+                <label htmlFor="name" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
                   {t('contact.nameLabel')}
                 </label>
                 <input
@@ -65,14 +65,14 @@ export default function Contact() {
                   value={formData.name}
                   onChange={handleChange}
                   required
-                  className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-indigo-500 focus:border-transparent outline-none transition"
+                  className="w-full px-4 py-3 rounded-lg border border-gray-300 dark:bg-gray-700 dark:text-white dark:border-gray-600 dark:placeholder-gray-400 focus:ring-2 focus:ring-indigo-500 focus:border-transparent outline-none transition"
                   placeholder={t('contact.namePlaceholder')}
                 />
               </div>
 
               {/* Email Field */}
               <div>
-                <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-2">
+                <label htmlFor="email" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
                   {t('contact.emailLabel')}
                 </label>
                 <input
@@ -82,14 +82,14 @@ export default function Contact() {
                   value={formData.email}
                   onChange={handleChange}
                   required
-                  className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-indigo-500 focus:border-transparent outline-none transition"
+                  className="w-full px-4 py-3 rounded-lg border border-gray-300 dark:bg-gray-700 dark:text-white dark:border-gray-600 dark:placeholder-gray-400 focus:ring-2 focus:ring-indigo-500 focus:border-transparent outline-none transition"
                   placeholder={t('contact.emailPlaceholder')}
                 />
               </div>
 
               {/* Subject Field */}
               <div>
-                <label htmlFor="subject" className="block text-sm font-medium text-gray-700 mb-2">
+                <label htmlFor="subject" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
                   {t('contact.subjectLabel')}
                 </label>
                 <input
@@ -99,14 +99,14 @@ export default function Contact() {
                   value={formData.subject}
                   onChange={handleChange}
                   required
-                  className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-indigo-500 focus:border-transparent outline-none transition"
+                  className="w-full px-4 py-3 rounded-lg border border-gray-300 dark:bg-gray-700 dark:text-white dark:border-gray-600 dark:placeholder-gray-400 focus:ring-2 focus:ring-indigo-500 focus:border-transparent outline-none transition"
                   placeholder={t('contact.subjectPlaceholder')}
                 />
               </div>
 
               {/* Message Field */}
               <div>
-                <label htmlFor="message" className="block text-sm font-medium text-gray-700 mb-2">
+                <label htmlFor="message" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
                   {t('contact.messageLabel')}
                 </label>
                 <textarea
@@ -116,7 +116,7 @@ export default function Contact() {
                   onChange={handleChange}
                   required
                   rows={6}
-                  className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-indigo-500 focus:border-transparent outline-none transition resize-none"
+                  className="w-full px-4 py-3 rounded-lg border border-gray-300 dark:bg-gray-700 dark:text-white dark:border-gray-600 dark:placeholder-gray-400 focus:ring-2 focus:ring-indigo-500 focus:border-transparent outline-none transition resize-none"
                   placeholder={t('contact.messagePlaceholder')}
                 />
               </div>
@@ -131,14 +131,14 @@ export default function Contact() {
             </form>
 
             {/* Contact Info */}
-            <div className="mt-8 pt-8 border-t border-gray-200">
+            <div className="mt-8 pt-8 border-t border-gray-200 dark:border-gray-700">
               <div className="text-center space-y-2">
-                <p className="text-gray-600">
+                <p className="text-gray-600 dark:text-gray-300">
                   {t('contact.orReachUs')}
                 </p>
                 <a
                   href="mailto:support@oglasnik.com"
-                  className="text-indigo-600 hover:text-indigo-700 font-medium"
+                  className="text-indigo-600 dark:text-indigo-400 hover:text-indigo-700 dark:hover:text-indigo-300 font-medium"
                 >
                   support@oglasnik.com
                 </a>

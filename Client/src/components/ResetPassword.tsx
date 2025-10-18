@@ -25,24 +25,24 @@ export default function ResetPassword() {
   }
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-indigo-100 via-purple-50 to-pink-100">
+    <div className="min-h-screen bg-gradient-to-br from-indigo-100 via-purple-50 to-pink-100 dark:from-gray-900 dark:via-gray-800 dark:to-gray-900">
       <Header />
 
       <div className="flex items-center justify-center min-h-screen px-4 pt-20 pb-16">
         <div className="w-full max-w-md">
-          <div className="bg-white/80 backdrop-blur-md rounded-2xl shadow-xl p-8">
+          <div className="bg-white/80 dark:bg-gray-800/80 backdrop-blur-md rounded-2xl shadow-xl p-8">
             <div className="text-center mb-8">
-              <h1 className="text-3xl font-bold text-gray-900 mb-2">
+              <h1 className="text-3xl font-bold text-gray-900 dark:text-white mb-2">
                 {t('resetPassword.title')}
               </h1>
-              <p className="text-gray-600">
+              <p className="text-gray-600 dark:text-gray-300">
                 {t('resetPassword.subtitle')}
               </p>
             </div>
 
             <form onSubmit={handleSubmit} className="space-y-6">
               <div>
-                <label htmlFor="password" className="block text-sm font-medium text-gray-700 mb-2">
+                <label htmlFor="password" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
                   {t('resetPassword.newPasswordLabel')}
                 </label>
                 <input
@@ -52,13 +52,13 @@ export default function ResetPassword() {
                   onChange={(e) => setPassword(e.target.value)}
                   required
                   minLength={8}
-                  className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-indigo-500 focus:border-transparent outline-none transition"
+                  className="w-full px-4 py-3 rounded-lg border border-gray-300 dark:bg-gray-700 dark:text-white dark:border-gray-600 dark:placeholder-gray-400 focus:ring-2 focus:ring-indigo-500 focus:border-transparent outline-none transition"
                   placeholder={t('resetPassword.newPasswordPlaceholder')}
                 />
               </div>
 
               <div>
-                <label htmlFor="confirmPassword" className="block text-sm font-medium text-gray-700 mb-2">
+                <label htmlFor="confirmPassword" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
                   {t('resetPassword.confirmPasswordLabel')}
                 </label>
                 <input
@@ -68,7 +68,7 @@ export default function ResetPassword() {
                   onChange={(e) => setConfirmPassword(e.target.value)}
                   required
                   minLength={8}
-                  className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-indigo-500 focus:border-transparent outline-none transition"
+                  className="w-full px-4 py-3 rounded-lg border border-gray-300 dark:bg-gray-700 dark:text-white dark:border-gray-600 dark:placeholder-gray-400 focus:ring-2 focus:ring-indigo-500 focus:border-transparent outline-none transition"
                   placeholder={t('resetPassword.confirmPasswordPlaceholder')}
                 />
               </div>
@@ -79,9 +79,9 @@ export default function ResetPassword() {
                   type="checkbox"
                   checked={showPassword}
                   onChange={(e) => setShowPassword(e.target.checked)}
-                  className="w-4 h-4 text-indigo-600 border-gray-300 rounded focus:ring-indigo-500"
+                  className="w-4 h-4 text-indigo-600 border-gray-300 dark:border-gray-600 rounded focus:ring-indigo-500"
                 />
-                <label htmlFor="showPassword" className="ml-2 text-sm text-gray-700">
+                <label htmlFor="showPassword" className="ml-2 text-sm text-gray-700 dark:text-gray-300">
                   {t('resetPassword.showPassword')}
                 </label>
               </div>
@@ -96,7 +96,7 @@ export default function ResetPassword() {
               <div className="text-center">
                 <Link
                   to="/signin"
-                  className="text-sm text-indigo-600 hover:text-indigo-800 font-medium"
+                  className="text-sm text-indigo-600 dark:text-indigo-400 hover:text-indigo-800 dark:hover:text-indigo-300 font-medium"
                 >
                   {t('resetPassword.backToSignIn')}
                 </Link>
