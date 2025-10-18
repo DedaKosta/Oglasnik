@@ -1,0 +1,150 @@
+{
+  "auth": {
+    "signIn": {
+      "title": "Welcome back",
+      "subtitle": "Sign in to your account to continue",
+      "email": "Email address",
+      "emailPlaceholder": "Enter your email",
+      "password": "Password",
+      "passwordPlaceholder": "Enter your password",
+      "rememberMe": "Remember me",
+      "forgotPassword": "Forgot password?",
+      "signInButton": "Sign in",
+      "orContinueWith": "Or continue with",
+      "noAccount": "Don't have an account?",
+      "signUpLink": "Sign up"
+    },
+    "signUp": {
+      "title": "Create an account",
+      "subtitle": "Join us and start your journey today",
+      "fullName": "Full Name",
+      "fullNamePlaceholder": "Enter your full name",
+      "email": "Email address",
+      "emailPlaceholder": "Enter your email",
+      "password": "Password",
+      "passwordPlaceholder": "Create a password",
+      "passwordHint": "Must be at least 8 characters",
+      "confirmPassword": "Confirm Password",
+      "confirmPasswordPlaceholder": "Confirm your password",
+      "termsPrefix": "I agree to the",
+      "termsLink": "Terms and Conditions",
+      "and": "and",
+      "privacyLink": "Privacy Policy",
+      "createAccountButton": "Create account",
+      "orSignUpWith": "Or sign up with",
+      "hasAccount": "Already have an account?",
+      "signInLink": "Sign in"
+    },
+    "social": {
+      "google": "Continue with Google"
+    }
+  },
+  "forgotPassword": {
+    "title": "Forgot Password",
+    "subtitle": "Enter your email address and we'll send you a link to reset your password",
+    "emailLabel": "Email address",
+    "emailPlaceholder": "Enter your email",
+    "submitButton": "Send reset link",
+    "backToSignIn": "Back to Sign In"
+  },
+  "resetPassword": {
+    "title": "Reset Password",
+    "subtitle": "Enter your new password below",
+    "newPasswordLabel": "New Password",
+    "newPasswordPlaceholder": "Enter new password",
+    "confirmPasswordLabel": "Confirm Password",
+    "confirmPasswordPlaceholder": "Confirm your new password",
+    "showPassword": "Show password",
+    "submitButton": "Reset password",
+    "backToSignIn": "Back to Sign In",
+    "passwordMismatch": "Passwords do not match"
+  },
+  "contact": {
+    "title": "Contact Us",
+    "subtitle": "We'd love to hear from you. Send us a message and we'll respond as soon as possible.",
+    "nameLabel": "Full Name",
+    "namePlaceholder": "Enter your full name",
+    "emailLabel": "Email Address",
+    "emailPlaceholder": "Enter your email",
+    "subjectLabel": "Subject",
+    "subjectPlaceholder": "What is this about?",
+    "messageLabel": "Message",
+    "messagePlaceholder": "Tell us more about your inquiry...",
+    "submitButton": "Send Message",
+    "orReachUs": "Or reach us directly at:",
+    "successMessage": "Thank you for your message! We'll get back to you soon."
+  },
+  "legal": {
+    "backToSignIn": "Back to Sign In",
+    "privacy": {
+      "title": "Privacy Policy",
+      "lastUpdated": "Last updated",
+      "section1": {
+        "title": "1. Introduction",
+        "content": "Welcome to Oglasnik. We respect your privacy and are committed to protecting your personal data. This privacy policy will inform you about how we look after your personal data when you visit our website and tell you about your privacy rights and how the law protects you."
+      },
+      "section2": {
+        "title": "2. Information We Collect",
+        "intro": "We may collect, use, store and transfer different kinds of personal data about you:",
+        "item1": "Identity Data: name, username or similar identifier",
+        "item2": "Contact Data: email address and telephone numbers",
+        "item3": "Technical Data: internet protocol (IP) address, browser type and version",
+        "item4": "Usage Data: information about how you use our website and services"
+      },
+      "section3": {
+        "title": "3. How We Use Your Information",
+        "content": "We will only use your personal data when the law allows us to. Most commonly, we will use your personal data to provide services to you, to improve our website and services, and to communicate with you about updates, offers, and news related to our services."
+      },
+      "section4": {
+        "title": "4. Data Security",
+        "content": "We have put in place appropriate security measures to prevent your personal data from being accidentally lost, used or accessed in an unauthorized way, altered or disclosed. We limit access to your personal data to those employees, agents, contractors and other third parties who have a business need to know."
+      },
+      "section5": {
+        "title": "5. Your Legal Rights",
+        "content": "Under certain circumstances, you have rights under data protection laws in relation to your personal data, including the right to request access, correction, erasure, restriction, transfer, or to object to processing. If you wish to exercise any of these rights, please contact us."
+      },
+      "section6": {
+        "title": "6. Contact Us",
+        "content": "If you have any questions about this privacy policy or our privacy practices, please contact us using the contact information provided below."
+      },
+      "questions": "Have questions about our privacy policy?"
+    },
+    "terms": {
+      "title": "Terms and Conditions",
+      "lastUpdated": "Last updated",
+      "section1": {
+        "title": "1. Acceptance of Terms",
+        "content": "By accessing and using Oglasnik, you accept and agree to be bound by the terms and provision of this agreement. If you do not agree to abide by the above, please do not use this service."
+      },
+      "section2": {
+        "title": "2. Use License",
+        "intro": "Permission is granted to temporarily use Oglasnik for personal, non-commercial purposes. This is the grant of a license, not a transfer of title, and under this license you may not:",
+        "item1": "Modify or copy the materials",
+        "item2": "Use the materials for any commercial purpose or for any public display",
+        "item3": "Attempt to reverse engineer any software contained on Oglasnik",
+        "item4": "Remove any copyright or other proprietary notations from the materials"
+      },
+      "section3": {
+        "title": "3. User Accounts",
+        "content": "When you create an account with us, you must provide information that is accurate, complete, and current at all times. Failure to do so constitutes a breach of the Terms, which may result in immediate termination of your account on our service."
+      },
+      "section4": {
+        "title": "4. Prohibited Activities",
+        "content": "You may not access or use the site for any purpose other than that for which we make the site available. The site may not be used in connection with any commercial endeavors except those that are specifically endorsed or approved by us."
+      },
+      "section5": {
+        "title": "5. Intellectual Property",
+        "content": "The service and its original content, features, and functionality are and will remain the exclusive property of Oglasnik and its licensors. The service is protected by copyright, trademark, and other laws of both the country and foreign countries."
+      },
+      "section6": {
+        "title": "6. Termination",
+        "content": "We may terminate or suspend your account and bar access to the service immediately, without prior notice or liability, under our sole discretion, for any reason whatsoever and without limitation, including but not limited to a breach of the Terms."
+      },
+      "section7": {
+        "title": "7. Limitation of Liability",
+        "content": "In no event shall Oglasnik, nor its directors, employees, partners, agents, suppliers, or affiliates, be liable for any indirect, incidental, special, consequential or punitive damages, including without limitation, loss of profits, data, use, goodwill, or other intangible losses."
+      },
+      "questions": "Have questions about our terms?"
+    }
+  }
+}
