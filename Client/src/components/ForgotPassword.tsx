@@ -1,0 +1,69 @@
+import { useState } from 'react'
+import { Link } from 'react-router-dom'
+import { useTranslation } from 'react-i18next'
+import Header from './Header'
+
+export default function ForgotPassword() {
+  const { t } = useTranslation()
+  const [email, setEmail] = useState('')
+
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault()
+    console.log('Password reset requested for:', email)
+    // TODO: Implement password reset logic
+  }
+
+  return (
+    <div className="min-h-screen bg-gradient-to-br from-indigo-100 via-purple-50 to-pink-100">
+      <Header />
+
+      <div className="flex items-center justify-center min-h-screen px-4 pt-20 pb-16">
+        <div className="w-full max-w-md">
+          <div className="bg-white/80 backdrop-blur-md rounded-2xl shadow-xl p-8">
+            <div className="text-center mb-8">
+              <h1 className="text-3xl font-bold text-gray-900 mb-2">
+                {t('forgotPassword.title')}
+              </h1>
+              <p className="text-gray-600">
+                {t('forgotPassword.subtitle')}
+              </p>
+            </div>
+
+            <form onSubmit={handleSubmit} className="space-y-6">
+              <div>
+                <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-2">
+                  {t('forgotPassword.emailLabel')}
+                </label>
+                <input
+                  id="email"
+                  type="email"
+                  value={email}
+                  onChange={(e) => setEmail(e.target.value)}
+                  required
+                  className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-indigo-500 focus:border-transparent outline-none transition"
+                  placeholder={t('forgotPassword.emailPlaceholder')}
+                />
+              </div>
+
+              <button
+                type="submit"
+                className="w-full bg-gradient-to-r from-indigo-600 to-indigo-800 text-white py-3 rounded-lg font-semibold hover:from-indigo-700 hover:to-indigo-900 transition transform hover:scale-[1.02] active:scale-[0.98]"
+              >
+                {t('forgotPassword.submitButton')}
+              </button>
+
+              <div className="text-center">
+                <Link
+                  to="/signin"
+                  className="text-sm text-indigo-600 hover:text-indigo-800 font-medium"
+                >
+                  {t('forgotPassword.backToSignIn')}
+                </Link>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  )
+}
