@@ -1,7 +1,7 @@
 import { useState, useEffect, useRef, useCallback } from 'react'
 import { useTranslation } from 'react-i18next'
-import Header from './Header'
-import Footer from './Footer'
+import Header from '../../../shared/components/Layout/Header'
+import Footer from '../../../shared/components/Layout/Footer'
 import ListingCard, { type Listing } from './ListingCard'
 import FilterPopup, { type Filters } from './FilterPopup'
 
@@ -40,7 +40,7 @@ export default function HomePage() {
   const [hasMore, setHasMore] = useState(true)
   const [searchQuery, setSearchQuery] = useState('')
   const [isFilterOpen, setIsFilterOpen] = useState(false)
-  const [filters, setFilters] = useState<Filters>({
+  const [_filters, setFilters] = useState<Filters>({
     category: '',
     minPrice: '',
     maxPrice: '',

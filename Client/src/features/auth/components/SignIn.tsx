@@ -1,17 +1,72 @@
 import { useState } from 'react'
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 import { useTranslation } from 'react-i18next'
-import Header from './Header'
+import { useAuth } from '../context/AuthContext'
+import Header from '../../../shared/components/Layout/Header'
 
 export default function SignIn() {
   const { t } = useTranslation()
+  const navigate = useNavigate()
+  const { login } = useAuth()
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
+  const [errors, setErrors] = useState<Record<string, string>>({})
+  const [isLoading, setIsLoading] = useState(false)
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
-    // Handle sign in logic here
-    console.log('Sign in with:', { email, password })
+    setErrors({})
+    setIsLoading(true)
+
+    try {
+      const response = await fetch('https://localhost:7283/api/login', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          email,
+          password,
+        }),
+      })
+
+      if (!response.ok) {
+        const errorData = await response.json().catch(() => ({}))
+
+        // Handle field-level validation errors from backend
+        if (errorData.errors) {
+          const fieldErrors: Record<string, string> = {}
+          Object.keys(errorData.errors).forEach(key => {
+            const fieldName = key.charAt(0).toLowerCase() + key.slice(1)
+            fieldErrors[fieldName] = errorData.errors[key].join(', ')
+          })
+          setErrors(fieldErrors)
+        } else if (response.status === 404) {
+          setErrors({ general: 'Invalid email or password' })
+        } else {
+          setErrors({ general: errorData.message || 'Login failed. Please try again.' })
+        }
+        return
+      }
+
+      const data = await response.json()
+
+      // Save user data and redirect to homepage
+      login({
+        id: data.id,
+        username: data.username,
+        email: data.email,
+        firstName: data.firstName,
+        lastName: data.lastName,
+      })
+
+      navigate('/')
+    } catch (error) {
+      console.error('Login error:', error)
+      setErrors({ general: 'Network error. Please check your connection and try again.' })
+    } finally {
+      setIsLoading(false)
+    }
   }
 
   return (
@@ -30,6 +85,13 @@ export default function SignIn() {
         {/* Form */}
         <form className="mt-8 space-y-6" onSubmit={handleSubmit}>
           <div className="space-y-4">
+            {/* General Error */}
+            {errors.general && (
+              <div className="p-3 bg-red-100 dark:bg-red-900/30 border border-red-400 dark:border-red-700 text-red-700 dark:text-red-400 rounded-lg text-sm">
+                {errors.general}
+              </div>
+            )}
+
             {/* Email Field */}
             <div>
               <label htmlFor="email" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">
@@ -42,10 +104,20 @@ export default function SignIn() {
                 autoComplete="email"
                 required
                 value={email}
-                onChange={(e) => setEmail(e.target.value)}
-                className="appearance-none relative block w-full px-4 py-3 border border-gray-300 dark:border-gray-600 placeholder-gray-500 dark:placeholder-gray-400 text-gray-900 dark:text-white bg-white dark:bg-gray-700 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-transparent transition-all"
+                onChange={(e) => {
+                  setEmail(e.target.value)
+                  if (errors.email || errors.general) {
+                    setErrors({})
+                  }
+                }}
+                className={`appearance-none relative block w-full px-4 py-3 border ${
+                  errors.email ? 'border-red-500 dark:border-red-600' : 'border-gray-300 dark:border-gray-600'
+                } placeholder-gray-500 dark:placeholder-gray-400 text-gray-900 dark:text-white bg-white dark:bg-gray-700 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-transparent transition-all`}
                 placeholder={t('auth.signIn.emailPlaceholder')}
               />
+              {errors.email && (
+                <p className="mt-1 text-sm text-red-600 dark:text-red-400">{errors.email}</p>
+              )}
             </div>
 
             {/* Password Field */}
@@ -60,10 +132,20 @@ export default function SignIn() {
                 autoComplete="current-password"
                 required
                 value={password}
-                onChange={(e) => setPassword(e.target.value)}
-                className="appearance-none relative block w-full px-4 py-3 border border-gray-300 dark:border-gray-600 placeholder-gray-500 dark:placeholder-gray-400 text-gray-900 dark:text-white bg-white dark:bg-gray-700 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-transparent transition-all"
+                onChange={(e) => {
+                  setPassword(e.target.value)
+                  if (errors.password || errors.general) {
+                    setErrors({})
+                  }
+                }}
+                className={`appearance-none relative block w-full px-4 py-3 border ${
+                  errors.password ? 'border-red-500 dark:border-red-600' : 'border-gray-300 dark:border-gray-600'
+                } placeholder-gray-500 dark:placeholder-gray-400 text-gray-900 dark:text-white bg-white dark:bg-gray-700 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-transparent transition-all`}
                 placeholder={t('auth.signIn.passwordPlaceholder')}
               />
+              {errors.password && (
+                <p className="mt-1 text-sm text-red-600 dark:text-red-400">{errors.password}</p>
+              )}
             </div>
           </div>
 
@@ -92,9 +174,10 @@ export default function SignIn() {
           <div>
             <button
               type="submit"
-              className="group relative w-full flex justify-center py-3 px-4 border border-transparent text-sm font-medium rounded-lg text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 transition-all duration-200 transform hover:scale-[1.02]"
+              disabled={isLoading}
+              className="group relative w-full flex justify-center py-3 px-4 border border-transparent text-sm font-medium rounded-lg text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 transition-all duration-200 transform hover:scale-[1.02] disabled:opacity-50 disabled:cursor-not-allowed disabled:transform-none"
             >
-              {t('auth.signIn.signInButton')}
+              {isLoading ? 'Signing in...' : t('auth.signIn.signInButton')}
             </button>
           </div>
 

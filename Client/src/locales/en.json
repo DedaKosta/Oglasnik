@@ -17,6 +17,10 @@
     "signUp": {
       "title": "Create an account",
       "subtitle": "Join us and start your journey today",
+      "firstName": "First Name",
+      "firstNamePlaceholder": "Enter your first name",
+      "lastName": "Last Name",
+      "lastNamePlaceholder": "Enter your last name",
       "fullName": "Full Name",
       "fullNamePlaceholder": "Enter your full name",
       "email": "Email address",
@@ -146,6 +150,23 @@
       },
       "questions": "Have questions about our terms?"
     }
+  },
+  "header": {
+    "signIn": "Sign In",
+    "signUp": "Sign Up",
+    "logout": "Logout"
+  },
+  "profile": {
+    "title": "My Profile",
+    "subtitle": "Manage your personal information",
+    "username": "Username",
+    "firstName": "First Name",
+    "lastName": "Last Name",
+    "email": "Email Address",
+    "editButton": "Edit Profile",
+    "saveButton": "Save Changes",
+    "cancelButton": "Cancel",
+    "saving": "Saving..."
   },
   "footer": {
     "allRightsReserved": "All rights reserved."

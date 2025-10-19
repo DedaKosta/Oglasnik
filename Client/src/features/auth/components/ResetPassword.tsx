@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import { Link, useSearchParams } from 'react-router-dom'
 import { useTranslation } from 'react-i18next'
-import Header from './Header'
+import Header from '../../../shared/components/Layout/Header'
 
 export default function ResetPassword() {
   const { t } = useTranslation()

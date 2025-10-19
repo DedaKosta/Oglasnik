@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import { useNavigate, useLocation } from 'react-router-dom'
 import { useTranslation } from 'react-i18next'
-import Header from './Header'
+import Header from '../../../shared/components/Layout/Header'
 
 export default function Contact() {
   const { t } = useTranslation()
