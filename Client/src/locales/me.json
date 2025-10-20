@@ -147,8 +147,23 @@
       "questions": "Imate pitanja o našim uslovima?"
     }
   },
+  "sidebar": {
+    "home": "Početna",
+    "browse": "Pregledaj oglase",
+    "favorites": "Omiljeni",
+    "messages": "Poruke",
+    "profile": "Moj profil",
+    "myListings": "Moji oglasi",
+    "settings": "Podešavanja",
+    "signIn": "Prijavi se",
+    "signUp": "Registruj se",
+    "signOut": "Odjavi se"
+  },
   "footer": {
-    "allRightsReserved": "Sva prava zadržana."
+    "allRightsReserved": "Sva prava zadržana.",
+    "privacy": "Privatnost",
+    "terms": "Uslovi",
+    "contact": "Kontakt"
   },
   "home": {
     "searchPlaceholder": "Pretražite proizvode, usluge...",
@@ -173,6 +188,14 @@
       "fashion": "Moda",
       "home": "Dom i bašta",
       "sports": "Sport"
+    },
+    "pagination": {
+      "itemsPerPage": "Stavki po stranici:",
+      "showing": "Prikazano",
+      "of": "od",
+      "previous": "Prethodna stranica",
+      "next": "Sljedeća stranica",
+      "page": "Stranica"
     }
   }
 }

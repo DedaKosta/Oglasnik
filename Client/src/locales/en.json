@@ -147,8 +147,23 @@
       "questions": "Have questions about our terms?"
     }
   },
+  "sidebar": {
+    "home": "Home",
+    "browse": "Browse Listings",
+    "favorites": "Favorites",
+    "messages": "Messages",
+    "profile": "My Profile",
+    "myListings": "My Listings",
+    "settings": "Settings",
+    "signIn": "Sign In",
+    "signUp": "Sign Up",
+    "signOut": "Sign Out"
+  },
   "footer": {
-    "allRightsReserved": "All rights reserved."
+    "allRightsReserved": "All rights reserved.",
+    "privacy": "Privacy",
+    "terms": "Terms",
+    "contact": "Contact"
   },
   "home": {
     "searchPlaceholder": "Search for products, services...",
@@ -173,6 +188,14 @@
       "fashion": "Fashion",
       "home": "Home & Garden",
       "sports": "Sports"
+    },
+    "pagination": {
+      "itemsPerPage": "Items per page:",
+      "showing": "Showing",
+      "of": "of",
+      "previous": "Previous page",
+      "next": "Next page",
+      "page": "Page"
     }
   }
 }

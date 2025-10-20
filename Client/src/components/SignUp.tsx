@@ -1,7 +1,6 @@
 import { useState } from 'react'
 import { Link } from 'react-router-dom'
 import { useTranslation } from 'react-i18next'
-import Header from './Header'
 
 export default function SignUp() {
   const { t } = useTranslation()
@@ -41,7 +40,7 @@ export default function SignUp() {
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-indigo-100 via-purple-50 to-pink-100 dark:from-gray-900 dark:via-gray-800 dark:to-gray-900">
-      <Header />
+      
       <div className="min-h-screen flex items-center justify-center px-4 py-12 pt-20">
       <div className="max-w-md w-full space-y-8 bg-white dark:bg-gray-800 p-8 rounded-2xl shadow-xl">
         {/* Header */}

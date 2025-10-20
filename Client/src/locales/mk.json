@@ -147,8 +147,23 @@
       "questions": "Имате прашања за нашите услови?"
     }
   },
+  "sidebar": {
+    "home": "Дома",
+    "browse": "Разгледај огласи",
+    "favorites": "Омилени",
+    "messages": "Пораки",
+    "profile": "Мој профил",
+    "myListings": "Мои огласи",
+    "settings": "Поставки",
+    "signIn": "Најави се",
+    "signUp": "Регистрирај се",
+    "signOut": "Одјави се"
+  },
   "footer": {
-    "allRightsReserved": "Сите права задржани."
+    "allRightsReserved": "Сите права задржани.",
+    "privacy": "Приватност",
+    "terms": "Услови",
+    "contact": "Контакт"
   },
   "home": {
     "searchPlaceholder": "Пребарувајте производи, услуги...",
@@ -173,6 +188,14 @@
       "fashion": "Мода",
       "home": "Дом и градина",
       "sports": "Спорт"
+    },
+    "pagination": {
+      "itemsPerPage": "Ставки по страница:",
+      "showing": "Прикажано",
+      "of": "од",
+      "previous": "Претходна страница",
+      "next": "Следна страница",
+      "page": "Страница"
     }
   }
 }
