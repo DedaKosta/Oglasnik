@@ -6,6 +6,9 @@ using Oglasnik.Data.Configuration;
 using Oglasnik.Data;
 using Microsoft.EntityFrameworkCore;
 using Oglasnik.Data.DbInitializer;
+using Oglasnik.Contracts.Configuration;
+using Oglasnik.Contracts.Services;
+using Oglasnik.Business.Services;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -19,9 +22,15 @@ Log.Logger = new LoggerConfiguration()
 
 builder.Host.UseSerilog();
 
+// Configure Keycloak settings
+builder.Services.Configure<KeycloakSettings>(builder.Configuration.GetSection("Keycloak"));
+
+// Register Keycloak service
+builder.Services.AddHttpClient<IKeycloakService, KeycloakService>();
+
 builder.Services
     .AddDatabase(builder.Configuration)
-    .AddAuthenticationAndAuthorization(builder.Configuration)
+    .AddKeycloakAuthentication(builder.Configuration)
     .AddFastEndpoints()
     .SwaggerDocument();
 

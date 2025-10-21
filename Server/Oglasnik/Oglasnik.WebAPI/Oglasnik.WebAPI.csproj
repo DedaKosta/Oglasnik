@@ -28,6 +28,7 @@
   <ItemGroup>
     <ProjectReference Include="..\Oglasnik.Contracts\Oglasnik.Contracts.csproj" />
     <ProjectReference Include="..\Oglasnik.Data\Oglasnik.Data.csproj" />
+    <ProjectReference Include="..\Oglasnik.Business\Oglasnik.Business.csproj" />
   </ItemGroup>
 
 </Project>
