@@ -159,11 +159,76 @@
     "signUp": "Регистрирај се",
     "signOut": "Одјави се"
   },
+  "header": {
+    "addListing": "Додај оглас",
+    "messages": "Пораки",
+    "settings": "Поставки на сметка"
+  },
   "footer": {
     "allRightsReserved": "Сите права задржани.",
     "privacy": "Приватност",
     "terms": "Услови",
     "contact": "Контакт"
+  },
+  "addListing": {
+    "title": "Додај нов оглас",
+    "titleLabel": "Наслов",
+    "titlePlaceholder": "Внесете наслов на огласот",
+    "descriptionLabel": "Опис",
+    "descriptionPlaceholder": "Опишете го вашиот артикл...",
+    "priceLabel": "Цена",
+    "categoryLabel": "Категорија",
+    "selectCategory": "Изберете категорија",
+    "locationLabel": "Локација",
+    "locationPlaceholder": "Внесете локација",
+    "imagesLabel": "Слики",
+    "imagesSelected": "слики избрани",
+    "submit": "Објави оглас",
+    "cancel": "Откажи"
+  },
+  "messages": {
+    "title": "Пораки",
+    "conversations": "Конверзации",
+    "typeMessage": "Напишете порака...",
+    "send": "Испрати",
+    "selectConversation": "Изберете конверзација за преглед на пораки"
+  },
+  "settings": {
+    "title": "Поставки на сметка",
+    "profile": {
+      "title": "Информации за профил",
+      "fullName": "Цело име",
+      "email": "Емаил адреса",
+      "phone": "Телефонски број",
+      "location": "Локација",
+      "bio": "Биографија",
+      "bioPlaceholder": "Кажете им на другите нешто за себе...",
+      "save": "Зачувај промени"
+    },
+    "password": {
+      "title": "Промени лозинка",
+      "current": "Тековна лозинка",
+      "new": "Нова лозинка",
+      "confirm": "Потврди лозинка",
+      "change": "Промени лозинка"
+    },
+    "notifications": {
+      "title": "Поставки за известувања",
+      "email": "Емаил известувања",
+      "emailDesc": "Примај емаил ажурирања за твоите огласи",
+      "push": "Push известувања",
+      "pushDesc": "Примај push известувања на твојот уред",
+      "messages": "Известувања за пораки",
+      "messagesDesc": "Биди известен кога ќе примиш нови пораки",
+      "listings": "Ажурирања на огласи",
+      "listingsDesc": "Примај ажурирања за твоите активни огласи"
+    },
+    "danger": {
+      "title": "Опасна зона",
+      "description": "Штом ќе ја избришеш сметката, нема враќање. Те молиме биди сигурен.",
+      "confirmDelete": "Дали си сигурен дека сакаш да ја избришеш сметката? Ова дејство не може да се поништи.",
+      "deleteAccount": "Избриши сметка"
+    }
   },
   "home": {
     "searchPlaceholder": "Пребарувајте производи, услуги...",

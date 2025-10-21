@@ -1,4 +1,4 @@
-import { useEffect, useRef } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import { useTranslation } from 'react-i18next'
 
 interface PaginationProps {
@@ -25,6 +25,8 @@ export default function Pagination({
   const currentPageRef = useRef(initialPage)
   const itemsPerPageRef = useRef(initialItemsPerPage)
   const initialized = useRef(false)
+  const [isPageSizeOpen, setIsPageSizeOpen] = useState(false)
+  const dropdownRef = useRef<HTMLDivElement>(null)
 
   // Update internal refs when props change (for page size changes)
   useEffect(() => {
@@ -32,6 +34,7 @@ export default function Pagination({
       itemsPerPageRef.current = initialItemsPerPage
       updateShowingText()
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [initialItemsPerPage])
 
   const pageSizeOptions = [6, 12, 24, 48]
@@ -97,8 +100,26 @@ export default function Pagination({
     currentPageRef.current = 1
     updateButtonStates(1)
     updateShowingText()
+    setIsPageSizeOpen(false)
     onPageSizeChange(size)
   }
+
+  // Handle click outside for dropdown
+  useEffect(() => {
+    const handleClickOutside = (event: MouseEvent) => {
+      if (dropdownRef.current && !dropdownRef.current.contains(event.target as Node)) {
+        setIsPageSizeOpen(false)
+      }
+    }
+
+    if (isPageSizeOpen) {
+      document.addEventListener('mousedown', handleClickOutside)
+    }
+
+    return () => {
+      document.removeEventListener('mousedown', handleClickOutside)
+    }
+  }, [isPageSizeOpen])
 
   // Setup event listeners only once
   useEffect(() => {
@@ -127,16 +148,19 @@ export default function Pagination({
     if (prevBtn) prevBtn.addEventListener('click', handlePrevClick)
     if (nextBtn) nextBtn.addEventListener('click', handleNextClick)
 
-    const selectEl = container.querySelector('select')
-    if (selectEl) {
-      selectEl.addEventListener('change', (e) => {
-        handlePageSizeChange(Number((e.target as HTMLSelectElement).value))
-      })
-    }
-
     // Initial state
     updateButtonStates(currentPageRef.current)
     updateShowingText()
+
+    // Cleanup function to remove event listeners
+    return () => {
+      if (pageButtonsContainer) {
+        pageButtonsContainer.removeEventListener('click', handleClick)
+      }
+      if (prevBtn) prevBtn.removeEventListener('click', handlePrevClick)
+      if (nextBtn) nextBtn.removeEventListener('click', handleNextClick)
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []) // Empty deps - only run once
 
   // Generate page numbers
@@ -170,33 +194,67 @@ export default function Pagination({
     <div
       ref={containerRef}
       id={id}
-      className="flex flex-col sm:flex-row items-center justify-between gap-4 p-4 bg-white/60 dark:bg-gray-800/60 backdrop-blur-sm rounded-lg border border-gray-200 dark:border-gray-700"
+      className="flex flex-col sm:flex-row items-center justify-between gap-4 p-4 bg-white/60 dark:bg-gray-800/60 backdrop-blur-sm rounded-lg"
     >
       {/* Page Size Selector */}
       <div className="flex flex-wrap items-center justify-center sm:justify-start gap-3">
         <span className="text-sm font-medium text-gray-700 dark:text-gray-300">
           {t('home.pagination.itemsPerPage', 'Items per page:')}
         </span>
-        <select
-          defaultValue={initialItemsPerPage}
-          className="px-3 py-1.5 text-sm rounded-md border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-800 text-gray-700 dark:text-gray-300 focus:ring-2 focus:ring-indigo-500 focus:border-transparent outline-none cursor-pointer"
-        >
-          {pageSizeOptions.map((size) => (
-            <option key={size} value={size}>
-              {size}
-            </option>
-          ))}
-        </select>
+
+        {/* Custom Dropdown */}
+        <div className="relative" ref={dropdownRef}>
+          <button
+            onClick={() => setIsPageSizeOpen(!isPageSizeOpen)}
+            className="flex items-center gap-2 px-2 py-1 rounded-md hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors"
+            aria-label="Select page size"
+          >
+            <span className="text-sm font-medium text-gray-700 dark:text-gray-300">
+              {itemsPerPageRef.current}
+            </span>
+            <svg
+              className={`w-3 h-3 text-gray-500 dark:text-gray-400 transition-transform ${isPageSizeOpen ? 'rotate-180' : 'rotate-0'}`}
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+            </svg>
+          </button>
+
+          {/* Dropdown Menu */}
+          {isPageSizeOpen && (
+              <div className="absolute left-0 bottom-full mb-2 bg-white dark:bg-gray-800 rounded-lg shadow-xl border border-gray-200 dark:border-gray-700 overflow-hidden z-50">
+                {pageSizeOptions.map((size) => (
+                  <button
+                    key={size}
+                    onClick={() => handlePageSizeChange(size)}
+                    className={`w-full px-4 py-2 text-sm text-left transition-colors ${
+                      itemsPerPageRef.current === size
+                        ? 'bg-indigo-50 dark:bg-indigo-900/30 text-indigo-700 dark:text-indigo-300 font-medium'
+                        : 'text-gray-700 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-gray-700'
+                    }`}
+                  >
+                    {size}
+                  </button>
+                ))}
+              </div>
+          )}
+        </div>
+
         <span className="text-xs text-gray-600 dark:text-gray-400 whitespace-nowrap">
-          {t('home.pagination.showing', 'Showing')}{' '}
+          {t('home.pagination.showing', 'Showing')}
+          {' '}
           <span data-start className="font-semibold text-gray-800 dark:text-gray-200">
             {(initialPage - 1) * initialItemsPerPage + 1}
           </span>
-          -
+          {' - '}
           <span data-end className="font-semibold text-gray-800 dark:text-gray-200">
             {Math.min(initialPage * initialItemsPerPage, totalItems)}
-          </span>{' '}
-          {t('home.pagination.of', 'of')}{' '}
+          </span>
+          {' '}
+          {t('home.pagination.of', 'of')}
+          {' '}
           <span className="font-semibold text-gray-800 dark:text-gray-200">{totalItems}</span>
         </span>
       </div>

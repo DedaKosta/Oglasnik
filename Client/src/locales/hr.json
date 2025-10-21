@@ -159,11 +159,76 @@
     "signUp": "Registriraj se",
     "signOut": "Odjavi se"
   },
+  "header": {
+    "addListing": "Dodaj oglas",
+    "messages": "Poruke",
+    "settings": "Postavke računa"
+  },
   "footer": {
     "allRightsReserved": "Sva prava pridržana.",
     "privacy": "Privatnost",
     "terms": "Uvjeti",
     "contact": "Kontakt"
+  },
+  "addListing": {
+    "title": "Dodaj novi oglas",
+    "titleLabel": "Naslov",
+    "titlePlaceholder": "Unesite naslov oglasa",
+    "descriptionLabel": "Opis",
+    "descriptionPlaceholder": "Opišite vaš artikl...",
+    "priceLabel": "Cijena",
+    "categoryLabel": "Kategorija",
+    "selectCategory": "Odaberite kategoriju",
+    "locationLabel": "Lokacija",
+    "locationPlaceholder": "Unesite lokaciju",
+    "imagesLabel": "Slike",
+    "imagesSelected": "slika odabrano",
+    "submit": "Objavi oglas",
+    "cancel": "Odustani"
+  },
+  "messages": {
+    "title": "Poruke",
+    "conversations": "Konverzacije",
+    "typeMessage": "Upišite poruku...",
+    "send": "Pošalji",
+    "selectConversation": "Odaberite konverzaciju za pregled poruka"
+  },
+  "settings": {
+    "title": "Postavke računa",
+    "profile": {
+      "title": "Informacije o profilu",
+      "fullName": "Puno ime",
+      "email": "Email adresa",
+      "phone": "Broj telefona",
+      "location": "Lokacija",
+      "bio": "Biografija",
+      "bioPlaceholder": "Recite drugima nešto o sebi...",
+      "save": "Spremi promjene"
+    },
+    "password": {
+      "title": "Promijeni lozinku",
+      "current": "Trenutna lozinka",
+      "new": "Nova lozinka",
+      "confirm": "Potvrdi lozinku",
+      "change": "Promijeni lozinku"
+    },
+    "notifications": {
+      "title": "Postavke obavijesti",
+      "email": "Email obavijesti",
+      "emailDesc": "Primaj email ažuriranja o svojim oglasima",
+      "push": "Push obavijesti",
+      "pushDesc": "Primaj push obavijesti na svom uređaju",
+      "messages": "Obavijesti o porukama",
+      "messagesDesc": "Budi obaviješten kada primiš nove poruke",
+      "listings": "Ažuriranja oglasa",
+      "listingsDesc": "Primaj ažuriranja o svojim aktivnim oglasima"
+    },
+    "danger": {
+      "title": "Opasna zona",
+      "description": "Kada obrišete svoj račun, nema povratka. Molimo budite sigurni.",
+      "confirmDelete": "Jeste li sigurni da želite obrisati svoj račun? Ova radnja se ne može poništiti.",
+      "deleteAccount": "Obriši račun"
+    }
   },
   "home": {
     "searchPlaceholder": "Pretražite proizvode, usluge...",

@@ -159,11 +159,76 @@
     "signUp": "Registruj se",
     "signOut": "Odjavi se"
   },
+  "header": {
+    "addListing": "Додај оглас",
+    "messages": "Поруке",
+    "settings": "Подешавања налога"
+  },
   "footer": {
     "allRightsReserved": "Sva prava zadržana.",
     "privacy": "Privatnost",
     "terms": "Uslovi",
     "contact": "Kontakt"
+  },
+  "addListing": {
+    "title": "Додај нови оглас",
+    "titleLabel": "Наслов",
+    "titlePlaceholder": "Унесите наслов огласа",
+    "descriptionLabel": "Опис",
+    "descriptionPlaceholder": "Опишите ваш артикал...",
+    "priceLabel": "Цена",
+    "categoryLabel": "Категорија",
+    "selectCategory": "Изаберите категорију",
+    "locationLabel": "Локација",
+    "locationPlaceholder": "Унесите локацију",
+    "imagesLabel": "Слике",
+    "imagesSelected": "слика изабрано",
+    "submit": "Објави оглас",
+    "cancel": "Откажи"
+  },
+  "messages": {
+    "title": "Поруке",
+    "conversations": "Конверзације",
+    "typeMessage": "Упишите поруку...",
+    "send": "Пошаљи",
+    "selectConversation": "Изаберите конверзацију да видите поруке"
+  },
+  "settings": {
+    "title": "Подешавања налога",
+    "profile": {
+      "title": "Информације о профилу",
+      "fullName": "Пуно име",
+      "email": "Емаил адреса",
+      "phone": "Број телефона",
+      "location": "Локација",
+      "bio": "Биографија",
+      "bioPlaceholder": "Реците другима нешто о себи...",
+      "save": "Сачувај промене"
+    },
+    "password": {
+      "title": "Промени лозинку",
+      "current": "Тренутна лозинка",
+      "new": "Нова лозинка",
+      "confirm": "Потврди лозинку",
+      "change": "Промени лозинку"
+    },
+    "notifications": {
+      "title": "Подешавања обавештења",
+      "email": "Емаил обавештења",
+      "emailDesc": "Примај емаил ажурирања о својим огласима",
+      "push": "Push обавештења",
+      "pushDesc": "Примај push обавештења на свом уређају",
+      "messages": "Обавештења о порукама",
+      "messagesDesc": "Буди обавештен када примиш нове поруке",
+      "listings": "Ажурирања огласа",
+      "listingsDesc": "Примај ажурирања о својим активним огласима"
+    },
+    "danger": {
+      "title": "Опасна зона",
+      "description": "Када обришете свој налог, нема повратка. Молимо будите сигурни.",
+      "confirmDelete": "Да ли сте сигурни да желите да обришете свој налог? Ова радња се не може поништити.",
+      "deleteAccount": "Обриши налог"
+    }
   },
   "home": {
     "searchPlaceholder": "Pretražite proizvode, usluge...",

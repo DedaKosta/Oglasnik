@@ -3,6 +3,7 @@ import { useTranslation } from 'react-i18next'
 import ListingCard, { type Listing } from './ListingCard'
 import FilterPopup, { type Filters } from './FilterPopup'
 import Pagination from './Pagination'
+import { useLayout } from '../contexts/LayoutContext'
 
 // Placeholder image generator
 const getPlaceholderImage = (id: number) =>
@@ -31,13 +32,9 @@ const generateListings = (page: number, perPage: number = 12): Listing[] => {
   })
 }
 
-interface HomePageProps {
-  onSearch?: (query: string) => void
-  onFilterOpen?: () => void
-}
-
-export default function HomePage({ onSearch, onFilterOpen }: HomePageProps) {
+export default function HomePage() {
   const { t } = useTranslation()
+  const { setFilterOpenHandler } = useLayout()
   const [listings, setListings] = useState<Listing[]>([])
   const currentPageRef = useRef(1)
   const [itemsPerPage, setItemsPerPage] = useState(12)
@@ -52,6 +49,16 @@ export default function HomePage({ onSearch, onFilterOpen }: HomePageProps) {
 
   const totalItems = 120 // Total number of items (can be fetched from API)
   const totalPages = Math.ceil(totalItems / itemsPerPage)
+
+  const handleFilterOpen = () => {
+    setIsFilterOpen(true)
+  }
+
+  // Register filter handler with Layout
+  useEffect(() => {
+    setFilterOpenHandler(handleFilterOpen)
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [])
 
   // Load listings
   const loadListings = useCallback(() => {
@@ -75,13 +82,6 @@ export default function HomePage({ onSearch, onFilterOpen }: HomePageProps) {
     // TODO: Implement filter logic
   }
 
-  // Pass filter open handler to parent
-  useEffect(() => {
-    if (onFilterOpen) {
-      // This is a workaround to pass the function up - better to use context or state management
-    }
-  }, [onFilterOpen])
-
   const handlePageChange = useCallback((page: number) => {
     currentPageRef.current = page
     loadListings()
@@ -96,20 +96,6 @@ export default function HomePage({ onSearch, onFilterOpen }: HomePageProps) {
     <div className="min-h-screen bg-gradient-to-br from-indigo-100 via-purple-50 to-pink-100 dark:from-gray-900 dark:via-gray-800 dark:to-gray-900">
       <div className="pt-20 pb-20 px-4">
         <div className="max-w-7xl mx-auto">
-
-          {/* Pagination - Top */}
-          <div className="mb-6" style={{ display: loading || listings.length === 0 ? 'none' : 'block' }}>
-            <Pagination
-              key="pagination-top"
-              id="pagination-top"
-              initialPage={currentPageRef.current}
-              itemsPerPage={itemsPerPage}
-              totalItems={totalItems}
-              totalPages={totalPages}
-              onPageChange={handlePageChange}
-              onPageSizeChange={handlePageSizeChange}
-            />
-          </div>
 
           {/* Listings List */}
           {loading ? (

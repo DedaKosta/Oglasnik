@@ -159,11 +159,76 @@
     "signUp": "Sign Up",
     "signOut": "Sign Out"
   },
+  "header": {
+    "addListing": "Add Listing",
+    "messages": "Messages",
+    "settings": "Account Settings"
+  },
   "footer": {
     "allRightsReserved": "All rights reserved.",
     "privacy": "Privacy",
     "terms": "Terms",
     "contact": "Contact"
+  },
+  "addListing": {
+    "title": "Add New Listing",
+    "titleLabel": "Title",
+    "titlePlaceholder": "Enter listing title",
+    "descriptionLabel": "Description",
+    "descriptionPlaceholder": "Describe your item...",
+    "priceLabel": "Price",
+    "categoryLabel": "Category",
+    "selectCategory": "Select a category",
+    "locationLabel": "Location",
+    "locationPlaceholder": "Enter location",
+    "imagesLabel": "Images",
+    "imagesSelected": "image(s) selected",
+    "submit": "Publish Listing",
+    "cancel": "Cancel"
+  },
+  "messages": {
+    "title": "Messages",
+    "conversations": "Conversations",
+    "typeMessage": "Type a message...",
+    "send": "Send",
+    "selectConversation": "Select a conversation to view messages"
+  },
+  "settings": {
+    "title": "Account Settings",
+    "profile": {
+      "title": "Profile Information",
+      "fullName": "Full Name",
+      "email": "Email Address",
+      "phone": "Phone Number",
+      "location": "Location",
+      "bio": "Bio",
+      "bioPlaceholder": "Tell others about yourself...",
+      "save": "Save Changes"
+    },
+    "password": {
+      "title": "Change Password",
+      "current": "Current Password",
+      "new": "New Password",
+      "confirm": "Confirm Password",
+      "change": "Change Password"
+    },
+    "notifications": {
+      "title": "Notification Preferences",
+      "email": "Email Notifications",
+      "emailDesc": "Receive email updates about your listings",
+      "push": "Push Notifications",
+      "pushDesc": "Receive push notifications on your device",
+      "messages": "Message Notifications",
+      "messagesDesc": "Get notified when you receive new messages",
+      "listings": "Listing Updates",
+      "listingsDesc": "Receive updates about your active listings"
+    },
+    "danger": {
+      "title": "Danger Zone",
+      "description": "Once you delete your account, there is no going back. Please be certain.",
+      "confirmDelete": "Are you sure you want to delete your account? This action cannot be undone.",
+      "deleteAccount": "Delete Account"
+    }
   },
   "home": {
     "searchPlaceholder": "Search for products, services...",
