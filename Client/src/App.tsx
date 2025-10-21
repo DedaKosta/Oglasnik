@@ -8,12 +8,13 @@ import ResetPassword from './components/ResetPassword'
 import PrivacyPolicy from './components/PrivacyPolicy'
 import TermsAndConditions from './components/TermsAndConditions'
 import Contact from './components/Contact'
-import Sidebar from './components/Sidebar'
+import AddListing from './components/AddListing'
+import Messages from './components/Messages'
+import AccountSettings from './components/AccountSettings'
 import Layout from './components/Layout'
 
 function App() {
   const [searchQuery, setSearchQuery] = useState('')
-  const [isFilterOpen, setIsFilterOpen] = useState(false)
 
   const handleSearch = (query: string) => {
     setSearchQuery(query)
@@ -21,25 +22,21 @@ function App() {
     // TODO: Implement search logic
   }
 
-  const handleFilterOpen = () => {
-    setIsFilterOpen(true)
-  }
-
   return (
     <BrowserRouter>
-      <Sidebar />
-      <Layout onSearch={handleSearch} onFilterOpen={handleFilterOpen}>
-        <Routes>
-          <Route path="/" element={<HomePage onSearch={handleSearch} onFilterOpen={handleFilterOpen} />} />
-          <Route path="/signin" element={<SignIn />} />
-          <Route path="/signup" element={<SignUp />} />
-          <Route path="/forgot-password" element={<ForgotPassword />} />
-          <Route path="/reset-password" element={<ResetPassword />} />
-          <Route path="/privacy" element={<PrivacyPolicy />} />
-          <Route path="/terms" element={<TermsAndConditions />} />
-          <Route path="/contact" element={<Contact />} />
-        </Routes>
-      </Layout>
+      <Routes>
+        <Route path="/" element={<Layout onSearch={handleSearch}><HomePage /></Layout>} />
+        <Route path="/signin" element={<Layout onSearch={handleSearch}><SignIn /></Layout>} />
+        <Route path="/signup" element={<Layout onSearch={handleSearch}><SignUp /></Layout>} />
+        <Route path="/forgot-password" element={<Layout onSearch={handleSearch}><ForgotPassword /></Layout>} />
+        <Route path="/reset-password" element={<Layout onSearch={handleSearch}><ResetPassword /></Layout>} />
+        <Route path="/privacy" element={<Layout onSearch={handleSearch}><PrivacyPolicy /></Layout>} />
+        <Route path="/terms" element={<Layout onSearch={handleSearch}><TermsAndConditions /></Layout>} />
+        <Route path="/contact" element={<Layout onSearch={handleSearch}><Contact /></Layout>} />
+        <Route path="/add-listing" element={<Layout onSearch={handleSearch}><AddListing /></Layout>} />
+        <Route path="/messages" element={<Layout onSearch={handleSearch}><Messages /></Layout>} />
+        <Route path="/settings" element={<Layout onSearch={handleSearch}><AccountSettings /></Layout>} />
+      </Routes>
     </BrowserRouter>
   )
 }
