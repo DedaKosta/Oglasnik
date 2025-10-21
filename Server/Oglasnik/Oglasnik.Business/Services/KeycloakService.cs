@@ -169,7 +169,7 @@ public class KeycloakService : IKeycloakService
         {
             await EnsureAdminTokenAsync();
 
-            var request = new HttpRequestMessage(HttpMethod.Get, $"{_settings.UsersEndpoint}?email={email}&exact=true");
+            var request = new HttpRequestMessage(HttpMethod.Get, $"{_settings.UsersEndpoint}?username={email}&exact=true");
             request.Headers.Authorization = new AuthenticationHeaderValue("Bearer", _adminToken);
 
             var response = await _httpClient.SendAsync(request);

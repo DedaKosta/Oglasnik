@@ -1,10 +1,14 @@
 import { create } from 'zustand'
 import { persist } from 'zustand/middleware'
+import { authService } from '../services/authService'
+import type { RegisterRequest } from '../types/api'
 
 export interface User {
-  id: string
+  id: number
+  username: string
   email: string
-  name?: string
+  firstName: string
+  lastName: string
   avatar?: string
 }
 
@@ -13,10 +17,12 @@ interface AuthState {
   isAuthenticated: boolean
   isLoading: boolean
   error: string | null
+  accessToken: string | null
+  refreshToken: string | null
 
   // Actions
   signIn: (email: string, password: string) => Promise<void>
-  signUp: (email: string, password: string, name?: string) => Promise<void>
+  signUp: (data: RegisterRequest) => Promise<void>
   signOut: () => void
   clearError: () => void
   setUser: (user: User | null) => void
@@ -29,53 +35,75 @@ export const useAuthStore = create<AuthState>()(
       isAuthenticated: false,
       isLoading: false,
       error: null,
+      accessToken: null,
+      refreshToken: null,
 
-      signIn: async (email: string, _password: string) => {
+      signIn: async (email: string, password: string) => {
         set({ isLoading: true, error: null })
         try {
-          // TODO: Replace with actual API call
-          // Simulating API call
-          await new Promise((resolve) => setTimeout(resolve, 1000))
+          // Note: email parameter can be username - API accepts it in the email field
+          const response = await authService.login({ email, password })
 
-          // Mock user data
           const user: User = {
-            id: '1',
-            email,
-            name: email.split('@')[0],
+            id: response.id,
+            username: response.username,
+            email: response.email,
+            firstName: response.firstName,
+            lastName: response.lastName,
           }
 
-          set({ user, isAuthenticated: true, isLoading: false })
+          set({
+            user,
+            isAuthenticated: true,
+            isLoading: false,
+            accessToken: response.accessToken,
+            refreshToken: response.refreshToken,
+          })
         } catch (error) {
           set({
             error: error instanceof Error ? error.message : 'Sign in failed',
-            isLoading: false
+            isLoading: false,
           })
+          throw error
         }
       },
 
-      signUp: async (email: string, _password: string, name?: string) => {
+      signUp: async (data: RegisterRequest) => {
         set({ isLoading: true, error: null })
         try {
-          // TODO: Replace with actual API call
-          await new Promise((resolve) => setTimeout(resolve, 1000))
+          const response = await authService.register(data)
 
           const user: User = {
-            id: '1',
-            email,
-            name: name || email.split('@')[0],
+            id: response.id,
+            username: response.username,
+            email: response.email,
+            firstName: response.firstName,
+            lastName: response.lastName,
           }
 
-          set({ user, isAuthenticated: true, isLoading: false })
+          // Registration successful - user needs to sign in
+          set({
+            user,
+            isAuthenticated: false, // User registered but not logged in
+            isLoading: false,
+          })
         } catch (error) {
           set({
             error: error instanceof Error ? error.message : 'Sign up failed',
-            isLoading: false
+            isLoading: false,
           })
+          throw error
         }
       },
 
       signOut: () => {
-        set({ user: null, isAuthenticated: false, error: null })
+        set({
+          user: null,
+          isAuthenticated: false,
+          error: null,
+          accessToken: null,
+          refreshToken: null,
+        })
       },
 
       clearError: () => {
@@ -87,11 +115,13 @@ export const useAuthStore = create<AuthState>()(
       },
     }),
     {
-      name: 'auth-storage', // name for localStorage key
+      name: 'auth-storage',
       partialize: (state) => ({
         user: state.user,
-        isAuthenticated: state.isAuthenticated
-      }), // only persist user and isAuthenticated
+        isAuthenticated: state.isAuthenticated,
+        accessToken: state.accessToken,
+        refreshToken: state.refreshToken,
+      }),
     }
   )
 )

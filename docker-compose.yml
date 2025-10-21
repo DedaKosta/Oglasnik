@@ -63,7 +63,7 @@ services:
       POSTGRES_USER: oglasnik_user
       POSTGRES_PASSWORD: oglasnik_password
     ports:
-      - "5432:5432"
+      - "5434:5432"
     networks:
       - oglasnik-network
     volumes:

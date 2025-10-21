@@ -22,6 +22,16 @@ Log.Logger = new LoggerConfiguration()
 
 builder.Host.UseSerilog();
 
+builder.Services.AddCors(options =>
+{
+    options.AddPolicy("AllowAll", policy =>
+    {
+        policy.AllowAnyOrigin()
+              .AllowAnyMethod()
+              .AllowAnyHeader();
+    });
+});
+
 // Configure Keycloak settings
 builder.Services.Configure<KeycloakSettings>(builder.Configuration.GetSection("Keycloak"));
 
@@ -55,5 +65,7 @@ app.UseAuthorization();
 
 app.UseFastEndpoints()
     .UseSwaggerGen();
+
+app.UseCors("AllowAll");
 
 app.Run();
