@@ -2,11 +2,10 @@ namespace Oglasnik.Contracts.Services;
 
 public interface IKeycloakService
 {
-    Task<KeycloakTokenResponse?> AuthenticateUserAsync(string username, string password);
-    Task<KeycloakUserCreationResponse?> CreateUserAsync(string username, string email, string firstName, string lastName, string password);
+    Task<KeycloakTokenResponse?> AuthenticateUserAsync(string email, string password);
+    Task<KeycloakUserCreationResponse?> CreateUserAsync(string email, string firstName, string lastName, string password);
     Task<bool> SetUserPasswordAsync(string userId, string password, bool temporary = false);
     Task<KeycloakUser?> GetUserByEmailAsync(string email);
-    Task<KeycloakUser?> GetUserByUsernameAsync(string username);
 }
 
 public class KeycloakTokenResponse

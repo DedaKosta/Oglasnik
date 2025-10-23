@@ -26,7 +26,7 @@ public class KeycloakService : IKeycloakService
         _logger = logger;
     }
 
-    public async Task<KeycloakTokenResponse?> AuthenticateUserAsync(string username, string password)
+    public async Task<KeycloakTokenResponse?> AuthenticateUserAsync(string email, string password)
     {
         try
         {
@@ -35,7 +35,7 @@ public class KeycloakService : IKeycloakService
                 new KeyValuePair<string, string>("client_id", _settings.ClientId),
                 new KeyValuePair<string, string>("client_secret", _settings.ClientSecret),
                 new KeyValuePair<string, string>("grant_type", "password"),
-                new KeyValuePair<string, string>("username", username),
+                new KeyValuePair<string, string>("username", email),
                 new KeyValuePair<string, string>("password", password)
             });
 
@@ -59,7 +59,6 @@ public class KeycloakService : IKeycloakService
     }
 
     public async Task<KeycloakUserCreationResponse?> CreateUserAsync(
-        string username,
         string email,
         string firstName,
         string lastName,
@@ -71,7 +70,7 @@ public class KeycloakService : IKeycloakService
 
             var userPayload = new
             {
-                username,
+                username = email,
                 email,
                 firstName,
                 lastName,
@@ -169,7 +168,7 @@ public class KeycloakService : IKeycloakService
         {
             await EnsureAdminTokenAsync();
 
-            var request = new HttpRequestMessage(HttpMethod.Get, $"{_settings.UsersEndpoint}?username={email}&exact=true");
+            var request = new HttpRequestMessage(HttpMethod.Get, $"{_settings.UsersEndpoint}?email={email}&exact=true");
             request.Headers.Authorization = new AuthenticationHeaderValue("Bearer", _adminToken);
 
             var response = await _httpClient.SendAsync(request);
@@ -187,34 +186,6 @@ public class KeycloakService : IKeycloakService
         catch (Exception ex)
         {
             _logger.LogError(ex, "Error getting user by email from Keycloak");
-            return null;
-        }
-    }
-
-    public async Task<KeycloakUser?> GetUserByUsernameAsync(string username)
-    {
-        try
-        {
-            await EnsureAdminTokenAsync();
-
-            var request = new HttpRequestMessage(HttpMethod.Get, $"{_settings.UsersEndpoint}?username={username}&exact=true");
-            request.Headers.Authorization = new AuthenticationHeaderValue("Bearer", _adminToken);
-
-            var response = await _httpClient.SendAsync(request);
-
-            if (!response.IsSuccessStatusCode)
-            {
-                return null;
-            }
-
-            var jsonResponse = await response.Content.ReadAsStringAsync();
-            var users = JsonSerializer.Deserialize<KeycloakUser[]>(jsonResponse);
-
-            return users?.FirstOrDefault();
-        }
-        catch (Exception ex)
-        {
-            _logger.LogError(ex, "Error getting user by username from Keycloak");
             return null;
         }
     }

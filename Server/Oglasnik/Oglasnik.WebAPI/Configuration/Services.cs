@@ -1,6 +1,5 @@
 ﻿using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.IdentityModel.Tokens;
-using System.Text;
 using Oglasnik.Contracts.Helpers;
 using Oglasnik.Contracts.Enums;
 using Oglasnik.Contracts.Configuration;
@@ -9,34 +8,6 @@ namespace OglasnikApi.Configuration;
 
 public static class Services
 {
-	public static IServiceCollection AddAuthenticationAndAuthorization(this IServiceCollection services, IConfiguration configuration)
-	{
-		services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
-			.AddJwtBearer(opt =>
-			{
-				opt.TokenValidationParameters = new TokenValidationParameters
-				{
-					ValidateIssuerSigningKey = true,
-					IssuerSigningKey = new SymmetricSecurityKey(Encoding.ASCII.GetBytes(configuration["Authorization:Secret"]!)),
-					ValidateIssuer = false,
-					ValidateAudience = false,
-					ValidateLifetime = true,
-					ClockSkew = TimeSpan.Zero
-				};
-			});
-
-		services.AddAuthorization(opt =>
-		{
-			opt.AddPolicy(Constants.AdminPolicy, policy => policy.RequireRole(AccountTypes.Admin.ToString()));
-			opt.AddPolicy(Constants.RegisteredUserOrAbovePolicy, policy => policy.RequireRole(AccountTypes.RegisteredUser.ToString(), AccountTypes.RegisteredUser.ToString()));
-			opt.AddPolicy(Constants.AllUsersPolicy, policy => policy.RequireRole(Enum.GetNames(typeof(AccountTypes))));
-		});
-
-		services.AddHttpContextAccessor();
-
-		return services;
-	}
-
 	public static IServiceCollection AddKeycloakAuthentication(this IServiceCollection services, IConfiguration configuration)
 	{
 		var keycloakSettings = configuration.GetSection("Keycloak").Get<KeycloakSettings>();
@@ -61,12 +32,6 @@ public static class Services
 					{
 						var logger = context.HttpContext.RequestServices.GetRequiredService<ILogger<Program>>();
 						logger.LogError(context.Exception, "JWT authentication failed");
-						return Task.CompletedTask;
-					},
-					OnTokenValidated = context =>
-					{
-						var logger = context.HttpContext.RequestServices.GetRequiredService<ILogger<Program>>();
-						logger.LogInformation("JWT token validated for user: {User}", context.Principal?.Identity?.Name);
 						return Task.CompletedTask;
 					}
 				};

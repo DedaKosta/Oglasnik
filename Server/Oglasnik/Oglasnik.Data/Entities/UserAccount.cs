@@ -20,7 +20,8 @@ public class UserAccount : Base
 	[EmailAddress]
 	public string Email { get; set; }
 	[Required]
-	public string Username { get; set; }
+	[MaxLength(100)]
+	public string KeycloakUserId { get; set; }
 	public string? PasswordHash { get; set; }
 	public long RoleId { get; set; }
 	public Role Role { get; set; }

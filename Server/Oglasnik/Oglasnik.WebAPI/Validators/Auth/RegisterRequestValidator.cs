@@ -9,11 +9,6 @@ public class RegisterRequestValidator : Validator<RegisterRequestRecord>
 {
     public RegisterRequestValidator()
     {
-		RuleFor(x => x.Username)
-	        .NotEmpty().WithMessage("Username is required!")
-	        .MinimumLength(8).WithMessage("Minimum length for Username is 8 characters!")
-	        .MaximumLength(20).WithMessage("Maximum length for Username is 20 characters!");
-
         RuleFor(x => x.Password)
             .NotEmpty().WithMessage("Password is required!")
             .MinimumLength(8).WithMessage("Minimum length for Password is 8 cahracters!")

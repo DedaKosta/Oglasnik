@@ -2,6 +2,7 @@ using Serilog;
 using FastEndpoints;
 using FastEndpoints.Swagger;
 using OglasnikApi.Configuration;
+using OglasnikApi.Middleware;
 using Oglasnik.Data.Configuration;
 using Oglasnik.Data;
 using Microsoft.EntityFrameworkCore;
@@ -38,6 +39,12 @@ builder.Services.Configure<KeycloakSettings>(builder.Configuration.GetSection("K
 // Register Keycloak service
 builder.Services.AddHttpClient<IKeycloakService, KeycloakService>();
 
+// Register UserAccount service
+builder.Services.AddScoped<IUserAccountService, UserAccountService>();
+
+// Register CurrentUser service
+builder.Services.AddScoped<ICurrentUserService, CurrentUserService>();
+
 builder.Services
     .AddDatabase(builder.Configuration)
     .AddKeycloakAuthentication(builder.Configuration)
@@ -61,6 +68,7 @@ if (app.Environment.IsDevelopment())
 }
 
 app.UseAuthentication();
+app.UseMiddleware<UserClaimsEnrichmentMiddleware>();
 app.UseAuthorization();
 
 app.UseFastEndpoints()

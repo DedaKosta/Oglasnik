@@ -7,11 +7,13 @@ namespace Oglasnik.WebAPI.Endpoints.Auth;
 public class Login : Endpoint<LoginRequestRecord, LoginResponseRecord>
 {
 	private readonly IKeycloakService _keycloakService;
+	private readonly IUserAccountService _userAccountService;
 	private readonly ILogger<Login> _logger;
 
-	public Login(IKeycloakService keycloakService, ILogger<Login> logger)
+	public Login(IKeycloakService keycloakService, IUserAccountService userAccountService, ILogger<Login> logger)
 	{
 		_keycloakService = keycloakService;
+		_userAccountService = userAccountService;
 		_logger = logger;
 	}
 
@@ -43,12 +45,11 @@ public class Login : Endpoint<LoginRequestRecord, LoginResponseRecord>
 			return;
 		}
 
-		_logger.LogInformation("User {Username} successfully logged in", keycloakUser.username);
+		_logger.LogInformation("User {Email} successfully logged in", keycloakUser.email);
 
 		// Return user info and token
 		var response = new LoginResponseRecord(
-			0, // ID is managed by Keycloak
-			keycloakUser.username,
+			keycloakUser.id,
 			keycloakUser.email,
 			keycloakUser.firstName,
 			keycloakUser.lastName,

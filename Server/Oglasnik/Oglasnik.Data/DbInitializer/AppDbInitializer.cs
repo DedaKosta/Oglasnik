@@ -44,36 +44,9 @@ public class AppDbInitializer
 
 		string salt = configuration["PasswordSalt:Salt"]!;
 
-		_dbContextx.UserAccounts.AddRange(new List<UserAccount>
-		{
-			new UserAccount
-			{
-				FirstName = "Nikola",
-				LastName = "Jovanovic",
-				Username = "nikola123",
-				PasswordHash = GetPasswordHash("Nikola@123", salt),
-				Email = "nikola.jovanovic@gmail.com",
-				RoleId = _dbContextx.Roles.First(x => x.Name == AccountTypes.Admin).Id
-			},
-			new UserAccount
-			{
-				FirstName = "Strahinja",
-				LastName = "Djurkovic",
-				Username = "strahinja123",
-				PasswordHash = GetPasswordHash("Strahinja@123", salt),
-				Email = "strahinja.djurkovic@gmail.com",
-				RoleId = _dbContextx.Roles.First(x => x.Name == AccountTypes.Admin).Id
-			},
-			new UserAccount
-			{
-				FirstName = "Dimitrije",
-				LastName = "Petrovic",
-				Username = "dimitrije123",
-				PasswordHash = GetPasswordHash("Dimitrije@123", salt),
-				Email = "dimitrije.petrovic@gmail.com",
-				RoleId = _dbContextx.Roles.First(x => x.Name == AccountTypes.Admin).Id
-			}
-		});
+		// Note: Seed users are now created through Keycloak registration
+		// If you need seed users, create them through the /api/register endpoint
+		// or manually in Keycloak, then they will be synced to the local database on first login
 		_dbContextx.SaveChanges();
 	}
 

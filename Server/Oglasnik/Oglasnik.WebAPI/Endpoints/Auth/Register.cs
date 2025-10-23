@@ -7,11 +7,13 @@ namespace OglasnikApi.Endpoints.Auth;
 public class Register : Endpoint<RegisterRequestRecord, RegisterResponseRecord>
 {
 	private readonly IKeycloakService _keycloakService;
+	private readonly IUserAccountService _userAccountService;
 	private readonly ILogger<Register> _logger;
 
-	public Register(IKeycloakService keycloakService, ILogger<Register> logger)
+	public Register(IKeycloakService keycloakService, IUserAccountService userAccountService, ILogger<Register> logger)
 	{
 		_keycloakService = keycloakService;
+		_userAccountService = userAccountService;
 		_logger = logger;
 	}
 
@@ -36,15 +38,8 @@ public class Register : Endpoint<RegisterRequestRecord, RegisterResponseRecord>
 			ThrowError("User with this email already exists");
 		}
 
-		var existingUserByUsername = await _keycloakService.GetUserByUsernameAsync(request.Username);
-		if (existingUserByUsername != null)
-		{
-			ThrowError("User with this username already exists");
-		}
-
 		// Create user in Keycloak
 		var result = await _keycloakService.CreateUserAsync(
-			request.Username,
 			request.Email,
 			request.FirstName,
 			request.LastName,
@@ -57,15 +52,32 @@ public class Register : Endpoint<RegisterRequestRecord, RegisterResponseRecord>
 			ThrowError(result?.Error ?? "Failed to create user");
 		}
 
-		_logger.LogInformation("User {Username} successfully registered with Keycloak ID: {KeycloakId}", request.Username, result.UserId);
+		_logger.LogInformation("User {Email} successfully registered with Keycloak ID: {KeycloakId}", request.Email, result.UserId);
 
-		// Return success response
-		await Send.OkAsync(new RegisterResponseRecord(
-			0, // ID is managed by Keycloak, not needed here
-			request.Username,
-			request.Email,
-			request.FirstName,
-			request.LastName
-		), cancellationToken);
+		// Create user in local database
+		try
+		{
+			var localUser = await _userAccountService.CreateAsync(
+				result.UserId!,
+				request.Email,
+				request.FirstName,
+				request.LastName
+			);
+
+			_logger.LogInformation("User {Email} successfully saved to local database with ID: {LocalId}", request.Email, localUser.Id);
+
+			// Return success response
+			await Send.OkAsync(new RegisterResponseRecord(
+				localUser.Id,
+				request.Email,
+				request.FirstName,
+				request.LastName
+			), cancellationToken);
+		}
+		catch (Exception ex)
+		{
+			_logger.LogError(ex, "Failed to create user in local database for Keycloak user {KeycloakId}", result.UserId);
+			ThrowError("User created in Keycloak but failed to save locally. Please contact support.");
+		}
 	}
 }

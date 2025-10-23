@@ -2,9 +2,11 @@
 
   <ItemGroup>
     <ProjectReference Include="..\Oglasnik.Contracts\Oglasnik.Contracts.csproj" />
+    <ProjectReference Include="..\Oglasnik.Data\Oglasnik.Data.csproj" />
   </ItemGroup>
 
   <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.Http.Abstractions" Version="2.3.0" />
     <PackageReference Include="Microsoft.Extensions.Logging.Abstractions" Version="9.0.10" />
     <PackageReference Include="Microsoft.Extensions.Options" Version="9.0.10" />
   </ItemGroup>

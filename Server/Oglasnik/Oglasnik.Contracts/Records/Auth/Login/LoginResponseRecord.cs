@@ -1,8 +1,7 @@
 ﻿namespace Oglasnik.Contracts.Records.Auth.Login;
 
 public record LoginResponseRecord(
-    long Id,
-    string Username,
+    string Id,
     string Email,
     string FirstName,
     string LastName,
