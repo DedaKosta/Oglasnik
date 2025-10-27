@@ -36,6 +36,9 @@ builder.Services.AddCors(options =>
 // Configure Keycloak settings
 builder.Services.Configure<KeycloakSettings>(builder.Configuration.GetSection("Keycloak"));
 
+// Configure MinIO settings
+builder.Services.Configure<MinioSettings>(builder.Configuration.GetSection("MinIO"));
+
 // Register Keycloak service
 builder.Services.AddHttpClient<IKeycloakService, KeycloakService>();
 
@@ -44,6 +47,12 @@ builder.Services.AddScoped<IUserAccountService, UserAccountService>();
 
 // Register CurrentUser service
 builder.Services.AddScoped<ICurrentUserService, CurrentUserService>();
+
+// Register MinIO service
+builder.Services.AddSingleton<IMinioService, MinioService>();
+
+// Register Listings service
+builder.Services.AddScoped<IListingsService, ListingsService>();
 
 builder.Services
     .AddDatabase(builder.Configuration)

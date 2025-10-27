@@ -4,5 +4,6 @@ export const API_CONFIG = {
     register: '/api/register',
     login: '/api/login',
     health: '/api/health',
+    listings: '/api/listings',
   },
 } as const

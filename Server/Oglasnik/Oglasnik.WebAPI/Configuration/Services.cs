@@ -23,7 +23,8 @@ public static class Services
 					ValidateAudience = keycloakSettings?.ValidateAudience ?? true,
 					ValidateLifetime = keycloakSettings?.ValidateLifetime ?? true,
 					ValidateIssuerSigningKey = true,
-					ValidAudience = keycloakSettings?.ClientId,
+					// Accept both the client ID and 'account' audience from Keycloak
+					ValidAudiences = new[] { keycloakSettings?.ClientId ?? "oglasnik.client", "account" },
 					ClockSkew = TimeSpan.Zero
 				};
 				opt.Events = new JwtBearerEvents

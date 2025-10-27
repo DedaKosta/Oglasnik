@@ -1,4 +1,3 @@
-import { useState } from 'react'
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import HomePage from './components/HomePage'
 import SignIn from './components/SignIn'
@@ -12,19 +11,24 @@ import AddListing from './components/AddListing'
 import Messages from './components/Messages'
 import AccountSettings from './components/AccountSettings'
 import Layout from './components/Layout'
+import { ToastProvider } from './contexts/ToastContext'
+import { LoadingProvider } from './contexts/LoadingContext'
+import ToastContainer from './components/ToastContainer'
+import GlobalLoadingSpinner from './components/GlobalLoadingSpinner'
+import ApiContextInitializer from './components/ApiContextInitializer'
 
 function App() {
-  const [searchQuery, setSearchQuery] = useState('')
-
   const handleSearch = (query: string) => {
-    setSearchQuery(query)
     console.log('Search:', query)
     // TODO: Implement search logic
   }
 
   return (
-    <BrowserRouter>
-      <Routes>
+    <ToastProvider>
+      <LoadingProvider>
+        <ApiContextInitializer>
+          <BrowserRouter>
+          <Routes>
         <Route path="/" element={<Layout onSearch={handleSearch}><HomePage /></Layout>} />
         <Route path="/signin" element={<Layout onSearch={handleSearch}><SignIn /></Layout>} />
         <Route path="/signup" element={<Layout onSearch={handleSearch}><SignUp /></Layout>} />
@@ -37,7 +41,12 @@ function App() {
         <Route path="/messages" element={<Layout onSearch={handleSearch}><Messages /></Layout>} />
         <Route path="/settings" element={<Layout onSearch={handleSearch}><AccountSettings /></Layout>} />
       </Routes>
+      <ToastContainer />
+      <GlobalLoadingSpinner />
     </BrowserRouter>
+        </ApiContextInitializer>
+      </LoadingProvider>
+    </ToastProvider>
   )
 }
 

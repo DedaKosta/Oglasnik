@@ -22,6 +22,7 @@ public class AppDbInitializer
 
 		SeedRoles(_dbContext);
 		SeedUserAccounts(_dbContext, configuration);
+		SeedCategories(_dbContext);
 	}
 
 	private static void SeedRoles(DatabaseContext _dbContextx)
@@ -48,6 +49,30 @@ public class AppDbInitializer
 		// If you need seed users, create them through the /api/register endpoint
 		// or manually in Keycloak, then they will be synced to the local database on first login
 		_dbContextx.SaveChanges();
+	}
+
+	private static void SeedCategories(DatabaseContext _dbContext)
+	{
+		if (_dbContext.Categories.Any())
+		{
+			return;
+		}
+
+		var categories = new List<Category>
+		{
+			new Category { Name = "Electronics", Description = "Electronic devices and gadgets" },
+			new Category { Name = "Vehicles", Description = "Cars, motorcycles, and other vehicles" },
+			new Category { Name = "Real Estate", Description = "Property and real estate listings" },
+			new Category { Name = "Fashion", Description = "Clothing, shoes, and accessories" },
+			new Category { Name = "Home & Garden", Description = "Furniture, appliances, and garden items" },
+			new Category { Name = "Sports & Outdoors", Description = "Sports equipment and outdoor gear" },
+			new Category { Name = "Books & Media", Description = "Books, movies, music, and games" },
+			new Category { Name = "Toys & Games", Description = "Children's toys and board games" },
+			new Category { Name = "Other", Description = "Miscellaneous items" }
+		};
+
+		_dbContext.Categories.AddRange(categories);
+		_dbContext.SaveChanges();
 	}
 
 	private static string GetPasswordHash(string password, string saltString)

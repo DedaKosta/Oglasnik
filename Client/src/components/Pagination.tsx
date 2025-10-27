@@ -140,13 +140,13 @@ export default function Pagination({
 
     const pageButtonsContainer = container.querySelector('[data-pages]')
     if (pageButtonsContainer) {
-      pageButtonsContainer.addEventListener('click', handleClick)
+      pageButtonsContainer.addEventListener('click', handleClick as EventListener)
     }
 
     const prevBtn = container.querySelector('[data-nav="prev"]')
     const nextBtn = container.querySelector('[data-nav="next"]')
-    if (prevBtn) prevBtn.addEventListener('click', handlePrevClick)
-    if (nextBtn) nextBtn.addEventListener('click', handleNextClick)
+    if (prevBtn) prevBtn.addEventListener('click', handlePrevClick as EventListener)
+    if (nextBtn) nextBtn.addEventListener('click', handleNextClick as EventListener)
 
     // Initial state
     updateButtonStates(currentPageRef.current)
@@ -155,10 +155,10 @@ export default function Pagination({
     // Cleanup function to remove event listeners
     return () => {
       if (pageButtonsContainer) {
-        pageButtonsContainer.removeEventListener('click', handleClick)
+        pageButtonsContainer.removeEventListener('click', handleClick as EventListener)
       }
-      if (prevBtn) prevBtn.removeEventListener('click', handlePrevClick)
-      if (nextBtn) nextBtn.removeEventListener('click', handleNextClick)
+      if (prevBtn) prevBtn.removeEventListener('click', handlePrevClick as EventListener)
+      if (nextBtn) nextBtn.removeEventListener('click', handleNextClick as EventListener)
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []) // Empty deps - only run once

@@ -1,4 +1,5 @@
 import { API_CONFIG } from '../config/api'
+import { apiRequest } from '../utils/api'
 import type {
   RegisterRequest,
   RegisterResponse,
@@ -15,37 +16,57 @@ class AuthService {
   }
 
   async register(data: RegisterRequest): Promise<RegisterResponse> {
-    const response = await fetch(`${this.baseURL}${API_CONFIG.endpoints.register}`, {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
+    return apiRequest(
+      async () => {
+        const response = await fetch(`${this.baseURL}${API_CONFIG.endpoints.register}`, {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify(data),
+        })
+
+        if (!response.ok) {
+          const error: ErrorResponse = await response.json()
+          throw new Error(this.formatErrorMessage(error))
+        }
+
+        return response.json()
       },
-      body: JSON.stringify(data),
-    })
-
-    if (!response.ok) {
-      const error: ErrorResponse = await response.json()
-      throw new Error(this.formatErrorMessage(error))
-    }
-
-    return response.json()
+      {
+        showLoading: true,
+        showSuccessToast: true,
+        showErrorToast: true,
+        successMessage: 'Account created successfully! Please sign in.',
+      }
+    )
   }
 
   async login(data: LoginRequest): Promise<LoginResponse> {
-    const response = await fetch(`${this.baseURL}${API_CONFIG.endpoints.login}`, {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
+    return apiRequest(
+      async () => {
+        const response = await fetch(`${this.baseURL}${API_CONFIG.endpoints.login}`, {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify(data),
+        })
+
+        if (!response.ok) {
+          const error: ErrorResponse = await response.json()
+          throw new Error(this.formatErrorMessage(error))
+        }
+
+        return response.json()
       },
-      body: JSON.stringify(data),
-    })
-
-    if (!response.ok) {
-      const error: ErrorResponse = await response.json()
-      throw new Error(this.formatErrorMessage(error))
-    }
-
-    return response.json()
+      {
+        showLoading: true,
+        showSuccessToast: true,
+        showErrorToast: true,
+        successMessage: 'Signed in successfully!',
+      }
+    )
   }
 
   private formatErrorMessage(error: ErrorResponse): string {

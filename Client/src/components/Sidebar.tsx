@@ -30,8 +30,8 @@ export default function Sidebar() {
         { path: '/signup', label: t('sidebar.signUp', 'Sign Up'), icon: 'userPlus' },
       ]
 
-  const renderIcon = (iconName: string) => {
-    const icons: Record<string, JSX.Element> = {
+  const renderIcon = (iconName: string): React.ReactElement => {
+    const icons: Record<string, React.ReactElement> = {
       home: (
         <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" />
@@ -137,11 +137,11 @@ export default function Sidebar() {
             <div className="p-4 border-b border-gray-200 dark:border-gray-700">
               <div className="flex items-center gap-3">
                 <div className="w-12 h-12 rounded-full bg-gradient-to-br from-indigo-500 to-purple-600 flex items-center justify-center text-white font-semibold text-lg">
-                  {user.name?.charAt(0).toUpperCase() || user.email.charAt(0).toUpperCase()}
+                  {user.firstName?.charAt(0).toUpperCase() || user.email.charAt(0).toUpperCase()}
                 </div>
                 <div className="flex-1 min-w-0">
                   <p className="text-sm font-semibold text-gray-900 dark:text-white truncate">
-                    {user.name || 'User'}
+                    {`${user.firstName} ${user.lastName}`.trim() || 'User'}
                   </p>
                   <p className="text-xs text-gray-500 dark:text-gray-400 truncate">
                     {user.email}
@@ -153,7 +153,7 @@ export default function Sidebar() {
           {isAuthenticated && user && !sidebarOpen && (
             <div className="p-4 border-b border-gray-200 dark:border-gray-700 flex justify-center">
               <div className="w-10 h-10 rounded-full bg-gradient-to-br from-indigo-500 to-purple-600 flex items-center justify-center text-white font-semibold text-sm">
-                {user.name?.charAt(0).toUpperCase() || user.email.charAt(0).toUpperCase()}
+                {user.firstName?.charAt(0).toUpperCase() || user.email.charAt(0).toUpperCase()}
               </div>
             </div>
           )}
@@ -221,7 +221,7 @@ export default function Sidebar() {
 
           {/* Language Switcher at Bottom */}
           <div className={`border-t border-gray-200 dark:border-gray-700 ${sidebarOpen ? 'p-4' : 'p-2 flex justify-center'}`}>
-            <LanguageSwitcher compact={!sidebarOpen} />
+            <LanguageSwitcher />
           </div>
         </div>
       </aside>

@@ -40,7 +40,7 @@ export default function HomePage() {
   const [itemsPerPage, setItemsPerPage] = useState(12)
   const [loading, setLoading] = useState(false)
   const [isFilterOpen, setIsFilterOpen] = useState(false)
-  const [filters, setFilters] = useState<Filters>({
+  const [, setFilters] = useState<Filters>({
     category: '',
     minPrice: '',
     maxPrice: '',

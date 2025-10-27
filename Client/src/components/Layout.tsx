@@ -1,4 +1,4 @@
-import { ReactNode, useState, useMemo, useCallback } from 'react'
+import { type ReactNode, useState, useMemo, useCallback } from 'react'
 import Header from './Header'
 import Footer from './Footer'
 import { LayoutContext } from '../contexts/LayoutContext'

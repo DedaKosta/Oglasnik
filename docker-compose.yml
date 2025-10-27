@@ -69,6 +69,31 @@ services:
     volumes:
       - app-db-data:/var/lib/postgresql/data
 
+  # MinIO Object Storage (S3-compatible)
+  minio:
+    image: minio/minio:latest
+    container_name: oglasnik-minio
+    environment:
+      # Admin credentials
+      MINIO_ROOT_USER: minioadmin
+      MINIO_ROOT_PASSWORD: minioadmin123
+
+      # Console configuration
+      MINIO_BROWSER_REDIRECT_URL: http://localhost:9001
+    command: server /data --console-address ":9001"
+    ports:
+      - "9000:9000"  # API endpoint
+      - "9001:9001"  # Web console
+    networks:
+      - oglasnik-network
+    volumes:
+      - minio-data:/data
+    healthcheck:
+      test: ["CMD", "mc", "ready", "local"]
+      interval: 30s
+      timeout: 20s
+      retries: 3
+
 networks:
   oglasnik-network:
     driver: bridge
@@ -77,3 +102,4 @@ volumes:
   keycloak-data:
   keycloak-db-data:
   app-db-data:
+  minio-data:
