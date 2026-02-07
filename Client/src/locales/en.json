@@ -17,6 +17,10 @@
     "signUp": {
       "title": "Create an account",
       "subtitle": "Join us and start your journey today",
+      "firstName": "First Name",
+      "firstNamePlaceholder": "Enter your first name",
+      "lastName": "Last Name",
+      "lastNamePlaceholder": "Enter your last name",
       "fullName": "Full Name",
       "fullNamePlaceholder": "Enter your full name",
       "email": "Email address",
@@ -147,88 +151,25 @@
       "questions": "Have questions about our terms?"
     }
   },
-  "sidebar": {
-    "home": "Home",
-    "browse": "Browse Listings",
-    "favorites": "Favorites",
-    "messages": "Messages",
-    "profile": "My Profile",
-    "myListings": "My Listings",
-    "settings": "Settings",
+  "header": {
     "signIn": "Sign In",
     "signUp": "Sign Up",
-    "signOut": "Sign Out"
+    "logout": "Logout"
   },
-  "header": {
-    "addListing": "Add Listing",
-    "messages": "Messages",
-    "settings": "Account Settings"
+  "profile": {
+    "title": "My Profile",
+    "subtitle": "Manage your personal information",
+    "username": "Username",
+    "firstName": "First Name",
+    "lastName": "Last Name",
+    "email": "Email Address",
+    "editButton": "Edit Profile",
+    "saveButton": "Save Changes",
+    "cancelButton": "Cancel",
+    "saving": "Saving..."
   },
   "footer": {
-    "allRightsReserved": "All rights reserved.",
-    "privacy": "Privacy",
-    "terms": "Terms",
-    "contact": "Contact"
-  },
-  "addListing": {
-    "title": "Add New Listing",
-    "titleLabel": "Title",
-    "titlePlaceholder": "Enter listing title",
-    "descriptionLabel": "Description",
-    "descriptionPlaceholder": "Describe your item...",
-    "priceLabel": "Price",
-    "categoryLabel": "Category",
-    "selectCategory": "Select a category",
-    "locationLabel": "Location",
-    "locationPlaceholder": "Enter location",
-    "imagesLabel": "Images",
-    "imagesSelected": "image(s) selected",
-    "submit": "Publish Listing",
-    "cancel": "Cancel"
-  },
-  "messages": {
-    "title": "Messages",
-    "conversations": "Conversations",
-    "typeMessage": "Type a message...",
-    "send": "Send",
-    "selectConversation": "Select a conversation to view messages"
-  },
-  "settings": {
-    "title": "Account Settings",
-    "profile": {
-      "title": "Profile Information",
-      "fullName": "Full Name",
-      "email": "Email Address",
-      "phone": "Phone Number",
-      "location": "Location",
-      "bio": "Bio",
-      "bioPlaceholder": "Tell others about yourself...",
-      "save": "Save Changes"
-    },
-    "password": {
-      "title": "Change Password",
-      "current": "Current Password",
-      "new": "New Password",
-      "confirm": "Confirm Password",
-      "change": "Change Password"
-    },
-    "notifications": {
-      "title": "Notification Preferences",
-      "email": "Email Notifications",
-      "emailDesc": "Receive email updates about your listings",
-      "push": "Push Notifications",
-      "pushDesc": "Receive push notifications on your device",
-      "messages": "Message Notifications",
-      "messagesDesc": "Get notified when you receive new messages",
-      "listings": "Listing Updates",
-      "listingsDesc": "Receive updates about your active listings"
-    },
-    "danger": {
-      "title": "Danger Zone",
-      "description": "Once you delete your account, there is no going back. Please be certain.",
-      "confirmDelete": "Are you sure you want to delete your account? This action cannot be undone.",
-      "deleteAccount": "Delete Account"
-    }
+    "allRightsReserved": "All rights reserved."
   },
   "home": {
     "searchPlaceholder": "Search for products, services...",
@@ -253,14 +194,6 @@
       "fashion": "Fashion",
       "home": "Home & Garden",
       "sports": "Sports"
-    },
-    "pagination": {
-      "itemsPerPage": "Items per page:",
-      "showing": "Showing",
-      "of": "of",
-      "previous": "Previous page",
-      "next": "Next page",
-      "page": "Page"
     }
   }
 }

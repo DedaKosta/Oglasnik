@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import { Link, useLocation } from 'react-router-dom'
 import { useTranslation } from 'react-i18next'
+import Header from '../../../shared/components/Layout/Header'
 
 function AccordionItem({
   title,
@@ -42,7 +43,7 @@ function AccordionItem({
   )
 }
 
-export default function TermsAndConditions() {
+export default function PrivacyPolicy() {
   const { t } = useTranslation()
   const location = useLocation()
   const [openIndex, setOpenIndex] = useState<number | null>(0)
@@ -53,7 +54,7 @@ export default function TermsAndConditions() {
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-indigo-100 via-purple-50 to-pink-100 dark:from-gray-900 dark:via-gray-800 dark:to-gray-900">
-      
+      <Header />
 
       <div className="flex items-center justify-center min-h-screen px-4 pt-20 pb-16">
         <div className="w-full max-w-3xl">
@@ -63,10 +64,10 @@ export default function TermsAndConditions() {
               <div className="flex justify-between items-start mb-6">
                 <div className="flex-1">
                   <h1 className="text-4xl font-bold text-gray-900 dark:text-white mb-2">
-                    {t('legal.terms.title')}
+                    {t('legal.privacy.title')}
                   </h1>
                   <p className="text-gray-600 dark:text-gray-400">
-                    {t('legal.terms.lastUpdated')}: {new Date().toLocaleDateString()}
+                    {t('legal.privacy.lastUpdated')}: {new Date().toLocaleDateString()}
                   </p>
                 </div>
                 <Link
@@ -84,78 +85,68 @@ export default function TermsAndConditions() {
             {/* Accordions */}
             <div className="space-y-3">
               <AccordionItem
-                title={t('legal.terms.section1.title')}
+                title={t('legal.privacy.section1.title')}
                 isOpen={openIndex === 0}
                 onToggle={() => toggleAccordion(0)}
               >
                 <p className="text-gray-700 dark:text-gray-300">
-                  {t('legal.terms.section1.content')}
+                  {t('legal.privacy.section1.content')}
                 </p>
               </AccordionItem>
 
               <AccordionItem
-                title={t('legal.terms.section2.title')}
+                title={t('legal.privacy.section2.title')}
                 isOpen={openIndex === 1}
                 onToggle={() => toggleAccordion(1)}
               >
                 <p className="text-gray-700 dark:text-gray-300 mb-4">
-                  {t('legal.terms.section2.intro')}
+                  {t('legal.privacy.section2.intro')}
                 </p>
                 <ul className="list-disc list-inside space-y-2 text-gray-700 dark:text-gray-300 ml-4">
-                  <li>{t('legal.terms.section2.item1')}</li>
-                  <li>{t('legal.terms.section2.item2')}</li>
-                  <li>{t('legal.terms.section2.item3')}</li>
-                  <li>{t('legal.terms.section2.item4')}</li>
+                  <li>{t('legal.privacy.section2.item1')}</li>
+                  <li>{t('legal.privacy.section2.item2')}</li>
+                  <li>{t('legal.privacy.section2.item3')}</li>
+                  <li>{t('legal.privacy.section2.item4')}</li>
                 </ul>
               </AccordionItem>
 
               <AccordionItem
-                title={t('legal.terms.section3.title')}
+                title={t('legal.privacy.section3.title')}
                 isOpen={openIndex === 2}
                 onToggle={() => toggleAccordion(2)}
               >
                 <p className="text-gray-700 dark:text-gray-300">
-                  {t('legal.terms.section3.content')}
+                  {t('legal.privacy.section3.content')}
                 </p>
               </AccordionItem>
 
               <AccordionItem
-                title={t('legal.terms.section4.title')}
+                title={t('legal.privacy.section4.title')}
                 isOpen={openIndex === 3}
                 onToggle={() => toggleAccordion(3)}
               >
                 <p className="text-gray-700 dark:text-gray-300">
-                  {t('legal.terms.section4.content')}
+                  {t('legal.privacy.section4.content')}
                 </p>
               </AccordionItem>
 
               <AccordionItem
-                title={t('legal.terms.section5.title')}
+                title={t('legal.privacy.section5.title')}
                 isOpen={openIndex === 4}
                 onToggle={() => toggleAccordion(4)}
               >
                 <p className="text-gray-700 dark:text-gray-300">
-                  {t('legal.terms.section5.content')}
+                  {t('legal.privacy.section5.content')}
                 </p>
               </AccordionItem>
 
               <AccordionItem
-                title={t('legal.terms.section6.title')}
+                title={t('legal.privacy.section6.title')}
                 isOpen={openIndex === 5}
                 onToggle={() => toggleAccordion(5)}
               >
                 <p className="text-gray-700 dark:text-gray-300">
-                  {t('legal.terms.section6.content')}
-                </p>
-              </AccordionItem>
-
-              <AccordionItem
-                title={t('legal.terms.section7.title')}
-                isOpen={openIndex === 6}
-                onToggle={() => toggleAccordion(6)}
-              >
-                <p className="text-gray-700 dark:text-gray-300">
-                  {t('legal.terms.section7.content')}
+                  {t('legal.privacy.section6.content')}
                 </p>
               </AccordionItem>
             </div>
@@ -163,7 +154,7 @@ export default function TermsAndConditions() {
             {/* Footer */}
             <div className="mt-8 pt-8 border-t border-gray-200 dark:border-gray-700">
               <p className="text-gray-600 dark:text-gray-300 text-center">
-                {t('legal.terms.questions')}{' '}
+                {t('legal.privacy.questions')}{' '}
                 <Link
                   to="/contact"
                   state={{ from: location.pathname }}

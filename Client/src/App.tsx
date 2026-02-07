@@ -1,52 +1,32 @@
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
-import HomePage from './components/HomePage'
-import SignIn from './components/SignIn'
-import SignUp from './components/SignUp'
-import ForgotPassword from './components/ForgotPassword'
-import ResetPassword from './components/ResetPassword'
-import PrivacyPolicy from './components/PrivacyPolicy'
-import TermsAndConditions from './components/TermsAndConditions'
-import Contact from './components/Contact'
-import AddListing from './components/AddListing'
-import Messages from './components/Messages'
-import AccountSettings from './components/AccountSettings'
-import Layout from './components/Layout'
-import { ToastProvider } from './contexts/ToastContext'
-import { LoadingProvider } from './contexts/LoadingContext'
-import ToastContainer from './components/ToastContainer'
-import GlobalLoadingSpinner from './components/GlobalLoadingSpinner'
-import ApiContextInitializer from './components/ApiContextInitializer'
+import { AuthProvider } from './features/auth/context/AuthContext'
+import HomePage from './features/home/components/HomePage'
+import SignIn from './features/auth/components/SignIn'
+import SignUp from './features/auth/components/SignUp'
+import ForgotPassword from './features/auth/components/ForgotPassword'
+import ResetPassword from './features/auth/components/ResetPassword'
+import ProfilePage from './features/profile/components/ProfilePage'
+import PrivacyPolicy from './features/legal/components/PrivacyPolicy'
+import TermsAndConditions from './features/legal/components/TermsAndConditions'
+import Contact from './features/legal/components/Contact'
 
 function App() {
-  const handleSearch = (query: string) => {
-    console.log('Search:', query)
-    // TODO: Implement search logic
-  }
-
   return (
-    <ToastProvider>
-      <LoadingProvider>
-        <ApiContextInitializer>
-          <BrowserRouter>
-          <Routes>
-        <Route path="/" element={<Layout onSearch={handleSearch}><HomePage /></Layout>} />
-        <Route path="/signin" element={<Layout onSearch={handleSearch}><SignIn /></Layout>} />
-        <Route path="/signup" element={<Layout onSearch={handleSearch}><SignUp /></Layout>} />
-        <Route path="/forgot-password" element={<Layout onSearch={handleSearch}><ForgotPassword /></Layout>} />
-        <Route path="/reset-password" element={<Layout onSearch={handleSearch}><ResetPassword /></Layout>} />
-        <Route path="/privacy" element={<Layout onSearch={handleSearch}><PrivacyPolicy /></Layout>} />
-        <Route path="/terms" element={<Layout onSearch={handleSearch}><TermsAndConditions /></Layout>} />
-        <Route path="/contact" element={<Layout onSearch={handleSearch}><Contact /></Layout>} />
-        <Route path="/add-listing" element={<Layout onSearch={handleSearch}><AddListing /></Layout>} />
-        <Route path="/messages" element={<Layout onSearch={handleSearch}><Messages /></Layout>} />
-        <Route path="/settings" element={<Layout onSearch={handleSearch}><AccountSettings /></Layout>} />
-      </Routes>
-      <ToastContainer />
-      <GlobalLoadingSpinner />
-    </BrowserRouter>
-        </ApiContextInitializer>
-      </LoadingProvider>
-    </ToastProvider>
+    <AuthProvider>
+      <BrowserRouter>
+        <Routes>
+          <Route path="/" element={<HomePage />} />
+          <Route path="/signin" element={<SignIn />} />
+          <Route path="/signup" element={<SignUp />} />
+          <Route path="/profile" element={<ProfilePage />} />
+          <Route path="/forgot-password" element={<ForgotPassword />} />
+          <Route path="/reset-password" element={<ResetPassword />} />
+          <Route path="/privacy" element={<PrivacyPolicy />} />
+          <Route path="/terms" element={<TermsAndConditions />} />
+          <Route path="/contact" element={<Contact />} />
+        </Routes>
+      </BrowserRouter>
+    </AuthProvider>
   )
 }
 
